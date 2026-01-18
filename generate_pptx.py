@@ -410,8 +410,8 @@ choose_box = add_text_box(slide, "Choose.",
              Inches(1.5), Inches(3.8), Inches(10.3), Inches(1.5), 80, ACCENT_COLOR, bold=True, align=PP_ALIGN.CENTER)
 
 # Contact
-add_text_box(slide, "Studio W230 — Invite-only evaluation audits launching 2026.\nRegister: simone@w230.net", 
-             Inches(1.5), Inches(6), Inches(10.3), Inches(1), 16, TEXT_GRAY, align=PP_ALIGN.CENTER)
+add_text_box(slide, "This manifesto represents ongoing research on AI evaluation infrastructure.\n\nConnect on LinkedIn: linkedin.com/in/simoneleonelli/\nSubscribe for updates: simone@w230.net\n\nSimone Leonelli — Studio W230", 
+             Inches(1.5), Inches(5.5), Inches(10.3), Inches(2), 16, TEXT_GRAY, align=PP_ALIGN.CENTER)
 
 
 # --------------------------------------------------------------------------------
