@@ -8,7 +8,7 @@ venv/
 Thumbs.db
 
 # Project specific
-Taste_Infrastructure_Manifesto.pptx
+*.pptx
 old_judgment-revolution-taste-infrastructure-2025-regenerated.txt
 judgment-revolution-change-log-regenerated.md
 
