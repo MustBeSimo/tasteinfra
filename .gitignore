@@ -1,0 +1,18 @@
+# Environment
+venv/
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project specific
+Taste_Infrastructure_Manifesto.pptx
+old_judgment-revolution-taste-infrastructure-2025-regenerated.txt
+judgment-revolution-change-log-regenerated.md
+
+# Dev state (kept local for a clean public website repo)
+progress.md
+TODO.md
+tests.json
