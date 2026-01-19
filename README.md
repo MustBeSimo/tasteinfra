@@ -3,24 +3,21 @@
 A manifesto on why the AI revolution is shifting from generation to evaluation.
 
 ## Overview
-This repository contains the source code for the "Taste Infrastructure" manifesto, a high-fidelity web presentation built with GSAP and a matching PowerPoint generator.
+This repository contains the source code for the "Taste Infrastructure" manifesto, a high-fidelity web presentation built with GSAP.
 
 ## Structure
 - `index.html`: Main web presentation.
 - `src/lib/animations.js`: Animation logic using GSAP.
 - `src/styles/main.css`: Styling and layout.
-- `generate_pptx.py`: Python script to generate a `.pptx` version of the manifesto.
 - `scripts/`: Utility scripts for initialization and checking.
 
 ## Getting Started
-1. Run `./scripts/init.sh` to set up the Python environment and install dependencies.
+1. Run `./scripts/init.sh` to set up the environment.
 2. Open `index.html` in any modern browser to view the presentation.
-3. Run `python3 generate_pptx.py` to generate the PowerPoint manifesto.
 
 ## Tech Stack
 - HTML5 / CSS3 (Tailwind-like utilities)
 - GSAP (GreenSock Animation Platform) for high-end UI animations
-- Python (`python-pptx`) for document generation
 
 ## License & Terms
 ✓ **LICENSE (CC-BY-NC-4.0)**:

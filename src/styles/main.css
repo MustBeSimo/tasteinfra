@@ -503,11 +503,48 @@ svg text {
 }
 
 .ref-table {
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .ref-table td {
-    padding: 10px 12px;
+    padding: 16px;
+    vertical-align: top;
+}
+
+.ref-table td:first-child {
+    font-weight: 600;
+    color: #666;
+    width: 200px;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.slide-dark .ref-table td:first-child {
+    color: #888;
+}
+
+.ref-table a {
+    color: #f59e0b;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+    display: inline-block;
+    line-height: 1.6;
+}
+
+.ref-table a:hover {
+    color: #d97706;
+    border-bottom-color: #d97706;
+    transform: translateX(2px);
+}
+
+.slide-dark .ref-table a {
+    color: #f59e0b;
+}
+
+.slide-dark .ref-table a:hover {
+    color: #fbbf24;
 }
 
 .nav {

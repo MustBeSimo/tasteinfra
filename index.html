@@ -11,14 +11,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mustbesimo.github.io/tasteinfra/">
     <meta property="og:title" content="Taste Infrastructure | Studio W230">
-    <meta property="og:description" content="The AI Revolution is Over. The Evaluation Revolution Just Started. When generation gets cheap, evaluation becomes the edge.">
+    <meta property="og:description" content="Generation is Abundant. Evaluation is Scarce. When generation gets cheap, evaluation becomes the edge.">
     <meta property="og:image" content="https://raw.githubusercontent.com/MustBeSimo/tasteinfra/main/press/Screenshot%202026-01-18%20at%208.08.38%E2%80%AFpm.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://mustbesimo.github.io/tasteinfra/">
     <meta property="twitter:title" content="Taste Infrastructure | Studio W230">
-    <meta property="twitter:description" content="The AI Revolution is Over. The Evaluation Revolution Just Started. When generation gets cheap, evaluation becomes the edge.">
+    <meta property="twitter:description" content="Generation is Abundant. Evaluation is Scarce. When generation gets cheap, evaluation becomes the edge.">
     <meta property="twitter:image" content="https://raw.githubusercontent.com/MustBeSimo/tasteinfra/main/press/Screenshot%202026-01-18%20at%208.08.38%E2%80%AFpm.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -37,6 +37,7 @@
     <a href="#business-case" data-label="Business Case" aria-label="Business Case"></a>
     <a href="#arbitrage" data-label="Arbitrage" aria-label="Arbitrage"></a>
     <a href="#stack" data-label="Stack" aria-label="Stack"></a>
+    <a href="#tradeoffs" data-label="Trade-offs" aria-label="Trade-offs"></a>
     <a href="#predictions" data-label="Predictions" aria-label="Predictions"></a>
     <a href="#credibility" data-label="Credibility" aria-label="Credibility"></a>
     <a href="#claim" data-label="Claim" aria-label="Claim"></a>
@@ -47,18 +48,18 @@
     <div class="container reveal">
         <div class="label">Manifesto &mdash; Studio W230</div>
         <h1>
-            <strong class="js-title-line" style="white-space: nowrap;">The AI Revolution is Over.</strong>
+            <strong class="js-title-line">Generation is Abundant.</strong>
             <br>
-            <strong class="js-title-line" style="display: block; margin-top: 24px; white-space: nowrap;">The Evaluation Revolution Just Started.</strong>
+            <strong class="js-title-line" style="display: block; margin-top: 24px;">Evaluation is Scarce.</strong>
         </h1>
-        <p class="js-split-text" style="font-size: 24px; color: #fff; margin-top: 32px; font-weight: 300; line-height: 1.4; white-space: nowrap;">
+        <p class="js-split-text" style="font-size: 24px; color: #fff; margin-top: 32px; font-weight: 300; line-height: 1.4;">
             When generation gets cheap, <span style="color: #f59e0b; font-weight: 600;">evaluation becomes the edge.</span>
         </p>
-        <p style="font-size: 16px; color: #666; margin-top: 40px; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap;">
+        <p style="font-size: 16px; color: #666; margin-top: 40px; letter-spacing: 0.05em; text-transform: uppercase;">
             <span style="color: #f59e0b; font-weight: 600;">URGENT:</span> Your AI is fluent. It's also wrong.
         </p>
         <p style="font-size: 14px; color: #888; margin-top: 24px; max-width: 600px; line-height: 1.6;">
-            <strong>Simone Leonelli</strong> — 16 years building taste systems for luxury brands (Fendi, Bentley, Porsche). I've seen what happens when you ship "fast" without "good". Now architecting AI evaluation infrastructure for enterprise.
+            <strong>Simone Leonelli</strong> — 16 years in design leadership and quality systems (R&D, strategy, art direction) for luxury brands including Fendi, Bentley, and Porsche. <br>I've seen what happens when teams ship "fast" without "good." <br>Now building AI evaluation and judgment infrastructure for enterprise systems.
         </p>
         <div style="margin-top: 48px; display: flex; gap: 32px; font-size: 14px; color: #666;">
             <span>January 2026</span><span>v3.2</span>
@@ -72,9 +73,10 @@
         <h2 class="js-split-text">The "Generation at Scale" Lie.</h2>
         <div class="callout callout-dark" style="border-left: 4px solid #f59e0b; background: #1a1a1a; margin-bottom: 32px;">
             <p style="margin: 0; color: #ccc; font-size: 16px; line-height: 1.6;">
-                <strong style="color: #f59e0b; display: block; margin-bottom: 12px; font-size: 18px;">Q3 2025: The Corpse</strong>
-                A Fortune 500 retailer shipped 50,000 AI-generated product emails. 12% contained factual hallucinations. They found out when customers started canceling contracts. Revenue dropped 15% in that segment. They couldn't trace why because they had no eval layer. <br><br>
-                This is the <strong><span class="accent">Taste Infrastructure</span></strong> problem.
+                <strong style="color: #f59e0b; display: block; margin-bottom: 12px; font-size: 18px;">CASE STUDY: Moffatt v. Air Canada (2024)</strong>
+                A customer support chatbot promised a refund policy that didn't exist. When sued, the airline argued the AI was a "separate legal entity" responsible for its own actions. <br><br>
+                The tribunal rejected this. The company was held liable for the hallucination. <br>
+                <strong>Lesson:</strong> Without an eval layer, <span class="accent">you are liable for every word your AI invents.</span>
             </p>
         </div>
         <p class="js-split-text">The AI industry sold you "generation at scale."</p>
@@ -122,11 +124,11 @@
             </svg>
         </div>
         <div class="callout callout-dark" style="margin-top: 24px;">
-            <strong style="color: #f59e0b;">THE THREE FORCES CONVERGING RIGHT NOW:</strong>
+            <strong style="color: #f59e0b;">OBSERVABLE TRENDS:</strong>
             <ul style="margin: 12px 0 0 20px; font-size: 14px; color: #ccc; line-height: 1.5;">
-                <li class="stagger-item"><strong>Model quality plateau</strong> &rarr; GPT-4.5 to o1/o3 = marginal gains (commoditization is HERE)</li>
-                <li><strong>Enterprise budgets</strong> &rarr; $1B+ spend in 2025 (stakes are real)</li>
-                <li><strong>First-wave failures</strong> &rarr; Public AI disasters are mounting (the corpses are fresh)</li>
+                <li class="stagger-item"><strong>Incremental model improvements</strong> &rarr; GPT-4 to o1/o3 gains are narrowing relative to 2020-2022</li>
+                <li><strong>Enterprise budgets</strong> &rarr; Significant capital allocation for AI reliability in 2025</li>
+                <li><strong>First-wave failures</strong> &rarr; Public AI disasters are mounting (documented liability)</li>
             </ul>
         </div>
     </div>
@@ -149,7 +151,7 @@
         </div>
 
         <div style="margin-top: 48px; border-top: 1px solid #eee; padding-top: 32px;">
-            <p style="font-size: 16px; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 700; background: rgba(245, 158, 11, 0.1); padding: 12px 16px; border-left: 3px solid #f59e0b;">Technically: Judgment is a trained compression function over a domain.</p>
+            <p style="font-size: 16px; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 700; background: rgba(245, 158, 11, 0.1); padding: 12px 16px; border-left: 3px solid #f59e0b;">Technically: Judgment is a trained compression function over a domain. <span style="color: #444; font-weight: 500;">In enterprise terms: <strong>Domain-Aligned Quality.</strong></span></p>
             
             <div class="callout stagger-item" style="font-family: monospace; font-size: 14px; background: #f9f9f9; border: 1px solid #eee;">
                 <div style="color: #888;">// Inputs</div><div>messy context, constraints, stakeholders, priors</div>
@@ -181,8 +183,13 @@
         <p>In markets, <strong>rents concentrate at constraints</strong>.</p>
         <div class="two-col">
             <div class="box box-light">
-                <div class="box-label">The $10 Rule</div>
-                <p style="font-size: 14px; margin: 8px 0;">Every dollar you save on cheap generation, you will spend <strong>$10 on cleaning up the mess</strong> if you don't have evaluation gates.</p>
+                <div class="box-label">The 1-10-100 Rule</div>
+                <p style="font-size: 14px; margin: 8px 0;">Adapted from quality engineering:</p>
+                <ul style="font-size: 13px; padding-left: 16px; margin: 8px 0;">
+                    <li><strong>$1</strong> to fix at Generation (Prompt/Context)</li>
+                    <li><strong>$10</strong> to fix at the Gate (Eval Layer)</li>
+                    <li><strong>$100</strong> to fix at the Customer (Lawsuits/Churn)</li>
+                </ul>
             </div>
             <div class="box box-accent">
                 <div class="box-label">Shifting Constraints</div>
@@ -207,19 +214,18 @@
         <p>Why invest in <span class="accent">Taste Infrastructure</span>? Because <strong>your competitor is already shipping garbage</strong> and they don't know it yet.</p>
         <div class="two-col" style="align-items: stretch;">
             <div class="box">
-                <div class="box-label">The Nightmare Scenario</div>
-                <div class="box-value">10,000 bad assets</div>
-                <div class="box-small">Your competitor just shipped 10,000 AI descriptions. Half are wrong. Revenue drops 15% in 6 months. They can't trace why. <strong>You are next.</strong></div>
+                <div class="box-label">CASE STUDY: Healthcare AI (2024)</div>
+                <div class="box-value">90% Error Rate</div>
+                <div class="box-small">An algorithm used by a major insurer to deny care was found to be wrong in 90% of appealed cases. The result: class-action lawsuits and regulatory scrutiny. <br><br><strong>Vibe-based deployment kills trust.</strong></div>
             </div>
             <div class="box box-accent">
-                <div class="box-label">THE SIMPLE MATH (ROI)</div>
+                <div class="box-label">THE ECONOMIC REALITY (ROI)</div>
                 <ul style="font-size: 13px; padding-left: 16px; margin: 8px 0; line-height: 1.6;">
-                    <li><strong>Cost to build gate:</strong> $200k-500k (one-time)</li>
-                    <li><strong>Cost of brand disaster:</strong> $5M-50M (churn, legal)</li>
-                    <li><strong>Exp. disasters/year:</strong> 1-3 (without gates)</li>
-                    <li><strong>Break-even probability:</strong> 1%</li>
+                    <li><strong>Infrastructure Cost:</strong> Typically 10-50x lower than a single critical incident exposure.</li>
+                    <li><strong>Risk Mitigation:</strong> Prevents "silent churn" from undetected hallucinated outputs.</li>
+                    <li><strong>Efficiency:</strong> Replaces expensive manual review with high-precision rejection gates.</li>
                 </ul>
-                <div style="margin-top: 12px; font-size: 12px; opacity: 0.8; font-style: italic;">"What is your current defect rate? If you don't know, it's >1%."</div>
+                <div style="margin-top: 12px; font-size: 12px; opacity: 0.8; font-style: italic;">"What is your current defect rate? If you don't know, you are flying blind."</div>
             </div>
         </div>
     </div>
@@ -229,7 +235,7 @@
     <div class="container reveal">
         <div class="label">06 &mdash; The Arbitrage</div>
         <h2 class="js-split-text">Where the market is still asleep</h2>
-        <p style="white-space: nowrap;">Meanwhile, <strong>judgment</strong> is underpriced because it's hard to credential and hard to measure.</p>
+        <p>Meanwhile, <strong>judgment</strong> is underpriced because it's hard to credential and hard to measure.</p>
         <div class="diagram-container">
             <div class="diagram-title">Skill Value Over Time: The Crossover</div>
             <svg viewBox="0 0 700 280" style="width: 100%; max-width: 700px;">
@@ -239,7 +245,7 @@
                 <path id="tech-skills-path" d="M 70 50 Q 195 87, 320 125 Q 445 162, 650 200" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="8,4"/>
                 <text x="85" y="42" fill="#999" font-size="11">Technical AI Skills</text>
                 <path id="judgment-path" d="M 70 200 Q 195 162, 320 125 Q 445 87, 650 50" fill="none" stroke="#f59e0b" stroke-width="3"/>
-                <text x="85" y="212" fill="#f59e0b" font-size="11">Aesthetic Judgment</text>
+                <text x="85" y="212" fill="#f59e0b" font-size="11">Aesthetic Judgment (Quality)</text>
                 <circle id="crossover-circle" cx="320" cy="125" r="12" fill="none" stroke="#f59e0b" stroke-width="2"/>
                 <line id="crossover-line" x1="320" y1="30" x2="320" y2="125" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,4"/>
                 <text id="crossover-text" x="320" y="22" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600">CROSSOVER: NOW</text>
@@ -302,14 +308,14 @@
                 
                 <strong style="color: #f59e0b;">GATE 4: EXCELLENCE (TASTE)</strong><br>
                 &boxvr;&boxh;&boxh; Check: High-end quality, creative spark, human-like nuance<br>
-                &boxvr;&boxh;&boxh; Tool: Expert human-in-the-loop + reward model ranker<br>
+                &boxvr;&boxh;&boxh; Tool: Reward model ranker (trained on expert judgments) + human review for edge cases (top 5% uncertainty)<br>
                 &boxvr;&boxh;&boxh; <span style="color: #ef4444;">Reject if: "Average" or uninspired output</span><br>
                 &boxur;&boxh;&boxh; <span style="color: #10b981;">Survival: 78%</span><br>
                 <span style="color: #666;">&darr;</span>
                 <br><br>
                 
                 <span style="color: #666;">SHIP:</span> <strong style="color: #fff;">64% final pass rate</strong><br>
-                <span style="color: #666;">Outcome:</span> <strong style="color: #10b981;">Quality becomes the edge. Zero "vibe-based" leaks.</strong>
+                <span style="color: #666;">Outcome:</span> <strong style="color: #10b981;">Quality becomes the edge. Near-zero critical leaks.</strong>
             </div>
         </div>
 
@@ -317,13 +323,13 @@
             <div class="box box-dark" style="border: 1px solid #333;">
                 <div class="box-label">Without Gates</div>
                 <div style="font-size: 14px; color: #888; line-height: 1.6;">
-                    Ship everything &rarr; 12% contain errors &rarr; customers find them &rarr; revenue drops 15% &rarr; can't trace why
+                    Ship everything &rarr; Higher hallucination risk &rarr; Brand trust erosion &rarr; Costly reactive cleanup
                 </div>
             </div>
             <div class="box box-dark" style="border: 1px solid #f59e0b;">
                 <div class="box-label">With Gates</div>
                 <div style="font-size: 14px; color: #ccc; line-height: 1.6;">
-                    Filter before shipping &rarr; 36% rejected internally &rarr; 0% errors reach customers &rarr; quality becomes the brand
+                    Filter before shipping &rarr; 36% rejected internally &rarr; Orders-of-magnitude reduction in critical defects &rarr; Quality becomes the brand
                 </div>
             </div>
         </div>
@@ -335,40 +341,83 @@
     </div>
 </section>
 
+<section class="slide slide-dark" id="tradeoffs">
+    <div class="container reveal">
+        <div class="label">07b &mdash; Honest Limitations</div>
+        <h2 class="js-split-text">The Cost of Control</h2>
+        <p>Rigorous evaluation is not free. It is a strategic choice with real trade-offs.</p>
+        
+        <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div class="box box-dark" style="border: 1px solid #333;">
+                <div class="box-label" style="color: #f59e0b;">Latency</div>
+                <p style="font-size: 14px; color: #aaa; line-height: 1.6;">
+                    Better judges "think" longer. Adding a robust LLM-as-a-Judge layer can add <strong>500ms - 2s</strong> to your response time.
+                    <br><br>
+                    <span style="color: #fff;">Verdict:</span> Unfit for real-time voice; essential for async email/reports.
+                </p>
+            </div>
+            <div class="box box-dark" style="border: 1px solid #333;">
+                <div class="box-label" style="color: #f59e0b;">False Negatives</div>
+                <p style="font-size: 14px; color: #aaa; line-height: 1.6;">
+                    Strict gates kill serendipity. An overly conservative "Brand Gate" will reject <strong>creative outliers</strong> that don't fit the training distribution.
+                    <br><br>
+                    <span style="color: #fff;">Verdict:</span> You must tune "Temperature" for the Gate, not just the Generator.
+                </p>
+            </div>
+            <div class="box box-dark" style="border: 1px solid #333;">
+                <div class="box-label" style="color: #f59e0b;">Maintenance</div>
+                <p style="font-size: 14px; color: #aaa; line-height: 1.6;">
+                    Your "Golden Set" rots faster than your code. As models change (weekly), your benchmarks become obsolete.
+                    <br><br>
+                    <span style="color: #fff;">Verdict:</span> You need a dedicated "Eval Ops" owner. It's not a set-and-forget script.
+                </p>
+            </div>
+            <div class="box box-dark" style="border: 1px solid #333;">
+                <div class="box-label" style="color: #f59e0b;">The Commoditization Question</div>
+                <p style="font-size: 14px; color: #aaa; line-height: 1.6;">
+                    Won't evaluation get cheaper too? <strong>Yes, for basic checks.</strong> Syntax validation, factual retrieval, and policy compliance are commoditizing fast.
+                    <br><br>
+                    <span style="color: #fff;">But:</span> Consequence-weighted judgment (brand risk, legal exposure, domain expertise) remains expensive because it's context-specific and liability-bearing.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="slide" id="predictions">
     <div class="container reveal">
-        <div class="label">08 &mdash; Falsifiable Bets</div>
-        <h2 class="js-split-text">Career-Defining Stakes</h2>
+        <div class="label">08 &mdash; Directional Indicators</div>
+        <h2 class="js-split-text">Strategic Inflection Points</h2>
         <table style="margin-top: 32px;">
             <thead>
                 <tr>
-                    <th>The Bet</th>
-                    <th>The Stakes</th>
+                    <th>Indicator</th>
+                    <th>Observed Trend</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="stagger-item">
                     <td><strong>The Talent Filter</strong></td>
-                    <td class="highlight-cell">By 2027, no F500 will promote an AI lead who cannot explain their eval metrics.</td>
+                    <td class="highlight-cell">Enterprise job postings increasingly pivot from generic "AI Prompting" to specialized "Evaluation, Red-Teaming, and Quality Assurance."</td>
                 </tr>
                 <tr class="stagger-item">
-                    <td><strong>The Budget Flip</strong></td>
-                    <td class="highlight-cell">By 2028, enterprises will spend 3× more on Evaluation than on Foundation Models.</td>
+                    <td><strong>The Compute Flip</strong></td>
+                    <td class="highlight-cell">Compute investment is shifting toward <strong>Inference-Time Reasoning</strong> as the primary lever for accuracy and reliability.</td>
                 </tr>
                 <tr class="stagger-item">
-                    <td><strong>The New Unicorn</strong></td>
-                    <td class="highlight-cell">The next $10B AI company won't be a model lab. It will be an Evaluation Infrastructure company.</td>
+                    <td><strong>The New Category</strong></td>
+                    <td class="highlight-cell">Evaluation Infrastructure is emerging as a standalone category, independent of foundation model providers.</td>
                 </tr>
             </tbody>
         </table>
         <div class="two-col" style="margin-top: 40px;">
             <div class="box stagger-item">
-                <div class="box-label">Your Move</div>
-                <div style="font-size: 14px; color: #1a1a1a; font-weight: 500;">Build the edge while others prompt.</div>
+                <div class="box-label">The Leader's Path</div>
+                <div style="font-size: 14px; color: #1a1a1a; font-weight: 500;">Build infrastructure for truth while others chase vibes.</div>
             </div>
             <div class="box stagger-item" style="opacity: 0.6;">
-                <div class="box-label">Their Fate</div>
-                <div style="font-size: 14px; color: #666;">Drown in their own generation.</div>
+                <div class="box-label">The Laggard's Fate</div>
+                <div style="font-size: 14px; color: #666;">Drown in the operational noise of unverified generation.</div>
             </div>
         </div>
     </div>
@@ -379,23 +428,23 @@
         <div class="label">09 &mdash; Skin in the Game</div>
         <h2 class="js-split-text">Why this is my life's work.</h2>
         <p style="font-size: 16px; color: #888; margin-bottom: 32px;">
-            Before my current role: 16 years building taste systems for luxury brands where "almost good" meant "trash." Fendi Casa, Bentley Home: 10+ collections, 20% market share growth. When I saw companies shipping broken outputs and calling it "agile," it broke me. I'm building W230 to fix it.
+            Before my current role: 16 years building design judgment, quality systems, and brand standards for luxury houses where "almost good" meant "trash." Fendi Casa, Bentley Home: 10+ collections, global market expansion. When I saw enterprises shipping unverified outputs and calling it "agile," I knew the methodology was broken. I'm building Studio W230 to fix the infrastructure of judgment.
         </p>
         <div class="two-col" style="align-items: stretch;">
             <div class="box box-dark" style="border: 1px solid #333;">
-                <div class="box-label">THE SAVE (CONCRETE PROOF)</div>
+                <div class="box-label">REPRESENTATIVE IMPACT (ANONYMIZED)</div>
                 <div style="margin-bottom: 12px; font-size: 14px; color: #ccc;">
-                    <strong>Context:</strong> B2B services company (Fortune 500 scale). Automated customer communication system.
+                    <strong>Context:</strong> B2B services company. Automated customer communication system.
                 </div>
                 <ul style="margin: 0; font-size: 14px; list-style: none; padding: 0; color: #888;">
                     <li style="border-bottom: 1px solid #333; padding: 12px 0 12px 45px !important;">
-                        <strong style="color: #f59e0b;">Finding:</strong> 8% factual errors & 3% legal risk in baseline AI outputs.
+                        <strong style="color: #f59e0b;">Finding:</strong> Significant factual errors and compliance risk detected in baseline AI outputs.
                     </li>
                     <li style="border-bottom: 1px solid #333; padding: 12px 0 12px 45px !important;">
-                        <strong style="color: #f59e0b;">Exposure:</strong> $15M potential exposure (churn + legal) vs. $120k implementation cost.
+                        <strong style="color: #f59e0b;">Exposure:</strong> High brand incident exposure vs. low-friction implementation of evaluation gates.
                     </li>
                     <li style="padding: 12px 0 12px 45px !important;">
-                        <strong style="color: #f59e0b;">Result:</strong> 125x ROI. Quality became the brand edge.
+                        <strong style="color: #f59e0b;">Result:</strong> Quality-driven differentiation. Implementation cost was a fraction of potential incident exposure.
                     </li>
                 </ul>
             </div>
@@ -414,7 +463,7 @@
             </div>
         </div>
         <div style="margin-top: 32px; font-size: 12px; color: #444; font-style: italic;">
-            * Case studies are anonymized or based on pre-employment work to protect confidentiality.
+            * Case studies are anonymized or based on representative enterprise patterns to protect confidentiality. Metrics are illustrative based on confidential consulting work.
         </div>
         <div style="margin-top: 32px; display: flex; gap: 24px; font-size: 13px; color: #666; flex-wrap: wrap;">
             <span><strong style="color: #f59e0b;">MIT</strong> Applied Agentic AI (2025)</span>
@@ -467,10 +516,11 @@
         <table class="ref-table">
             <thead><tr><th>Domain</th><th>Resource</th></tr></thead>
             <tbody>
-                <tr><td>Foundational Psychology</td><td><a href="https://global.oup.com/academic/product/thinking-fast-and-slow-9780141033570" target="_blank">Kahneman (2011) — Thinking, Fast and Slow</a></td></tr>
-                <tr><td>Economic Constraints</td><td><a href="https://gwern.net/doc/design/1971-simon.pdf" target="_blank">Simon (1971) — Designing Organizations for an Information-Rich World</a></td></tr>
-                <tr><td>Industry Strategy</td><td><a href="https://www.gartner.com/en/articles/what-it-takes-to-make-genai-production-ready" target="_blank">Gartner (2025) — The Case for AI Quality Gates & TRiSM</a></td></tr>
-                <tr><td>Evaluation Research</td><td><a href="https://www.anthropic.com/research/evaluating-ai-systems" target="_blank">Anthropic — Model Evaluation & Constitutional AI Research</a></td></tr>
+                <tr><td>Legal Liability</td><td><a href="https://canlii.ca/t/k2pfh" target="_blank">CRT Tribunal — Moffatt v. Air Canada (2024)</a></td></tr>
+                <tr><td>Cost Dynamics</td><td><a href="https://epoch.ai/data-insights/llm-apis-accuracy-runtime-tradeoff" target="_blank">Epoch AI — LLM Accuracy-Runtime Trade-offs (2024)</a></td></tr>
+                <tr><td>Market Research</td><td><a href="https://timesofindia.indiatimes.com/technology/tech-news/mit-study-finds-95-of-generative-ai-projects-are-failing-only-hype-little-transformation/articleshow/123453071.cms" target="_blank">MIT Study — The GenAI Divide (95% Failure Rate)</a></td></tr>
+                <tr><td>Risk Assessment</td><td><a href="https://www.statnews.com/2023/11/14/unitedhealth-class-action-lawsuit-algorithm-medicare-advantage-denials/" target="_blank">Stat News — UnitedHealth AI Lawsuit (90% Error Rate)</a></td></tr>
+                <tr><td>Foundational</td><td><a href="https://gwern.net/doc/design/1971-simon.pdf" target="_blank">Simon (1971) — Designing Organizations for an Information-Rich World</a></td></tr>
             </tbody>
         </table>
     </div>
