@@ -194,8 +194,14 @@ p strong { color: #1a1a1a; }
 
 .slide-dark .box-light:hover .box-label,
 .slide-dark .box-light:hover p,
-.slide-dark .box-light:hover strong {
+.slide-dark .box-light:hover strong,
+.slide-dark .box-light:hover ul,
+.slide-dark .box-light:hover li {
     color: #1a1a1a !important;
+}
+
+.slide-dark .box-light:hover li::before {
+    color: #f59e0b !important;
 }
 
 .box-label {
