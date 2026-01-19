@@ -37,11 +37,15 @@
     <a href="#business-case" data-label="Business Case" aria-label="Business Case"></a>
     <a href="#arbitrage" data-label="Arbitrage" aria-label="Arbitrage"></a>
     <a href="#stack" data-label="Stack" aria-label="Stack"></a>
+    <a href="#implementation" data-label="Implementation" aria-label="Implementation"></a>
     <a href="#tradeoffs" data-label="Trade-offs" aria-label="Trade-offs"></a>
+    <a href="#low-latency" data-label="Latency" aria-label="Low-Latency"></a>
     <a href="#predictions" data-label="Predictions" aria-label="Predictions"></a>
+    <a href="#metrics" data-label="Metrics" aria-label="Metrics"></a>
     <a href="#credibility" data-label="Credibility" aria-label="Credibility"></a>
     <a href="#claim" data-label="Claim" aria-label="Claim"></a>
     <a href="#references" data-label="Reading" aria-label="Further Reading"></a>
+    <a href="#appendix" data-label="Appendix" aria-label="Technical Appendix"></a>
 </nav>
 
     <section class="slide slide-dark" id="title">
@@ -126,7 +130,7 @@
         <div class="callout callout-dark" style="margin-top: 24px;">
             <strong style="color: #f59e0b;">OBSERVABLE TRENDS:</strong>
             <ul style="margin: 12px 0 0 20px; font-size: 14px; color: #ccc; line-height: 1.5;">
-                <li class="stagger-item"><strong>Incremental model improvements</strong> &rarr; GPT-4 to o1/o3 gains are narrowing relative to 2020-2022</li>
+                <li class="stagger-item"><strong>Incremental model improvements</strong> &rarr; GPT-4 to GPT-5.2 gains are narrowing relative to 2020-2022</li>
                 <li><strong>Enterprise budgets</strong> &rarr; Significant capital allocation for AI reliability in 2025</li>
                 <li><strong>First-wave failures</strong> &rarr; Public AI disasters are mounting (documented liability)</li>
             </ul>
@@ -265,6 +269,82 @@
                 Stop hiring prompt engineers. Start hiring judges.
             </div>
         </div>
+
+        <div style="margin-top: 48px; border-top: 2px solid #f59e0b; padding-top: 32px;">
+            <h3 style="font-size: 28px; color: #1a1a1a; margin-bottom: 24px;">Why This Won't Commoditize: Your Moat</h3>
+
+            <div class="two-col" style="gap: 24px; margin-bottom: 24px;">
+                <div class="box" style="background: #f9f9f9; border: 1px solid #ddd;">
+                    <div class="box-label" style="color: #999;">WILL Commoditize ✓</div>
+                    <ul style="font-size: 13px; padding-left: 20px; margin: 12px 0; line-height: 1.8; color: #666;">
+                        <li>Generic content moderation (Already commodity)</li>
+                        <li>Syntax/grammar checking (Grammarly, GPT-5.2)</li>
+                        <li>Basic fact-checking (RAG patterns)</li>
+                        <li>Simple policy compliance</li>
+                    </ul>
+                </div>
+                <div class="box box-accent" style="border: 2px solid #f59e0b;">
+                    <div class="box-label">WON'T Commoditize → Your Moat</div>
+                    <ul style="font-size: 13px; padding-left: 20px; margin: 12px 0; line-height: 1.8;">
+                        <li><strong>Context-Specific Judgment</strong></li>
+                        <li><strong>Liability-Weighted Evaluation</strong></li>
+                        <li><strong>Continuous Learning Loops</strong></li>
+                        <li><strong>Domain Expertise Encoding</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background: #1a1a1a; color: #fff; padding: 32px; border-radius: 8px; margin-top: 24px;">
+                <h4 style="color: #f59e0b; margin-bottom: 16px; font-size: 18px;">The Three Defensible Moats:</h4>
+
+                <div style="margin-bottom: 24px;">
+                    <strong style="color: #f59e0b; display: block; margin-bottom: 8px;">1. Context-Specific Judgment</strong>
+                    <p style="font-size: 14px; color: #ccc; line-height: 1.6; margin: 0;">
+                        Your brand's taste is unique. How "luxury" is defined varies radically (Hermès ≠ Gucci ≠ Tesla).
+                        Foundation models give generic judgment. <span style="color: #f59e0b;">Your training data = your competitive advantage.</span>
+                        <br><br>
+                        Example: A financial services firm's "professional tone" differs from a healthcare provider's "empathetic tone."
+                        Generic models can't learn these nuances without YOUR labeled data.
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 24px;">
+                    <strong style="color: #f59e0b; display: block; margin-bottom: 8px;">2. Liability-Weighted Evaluation (Consequence Modeling)</strong>
+                    <p style="font-size: 14px; color: #ccc; line-height: 1.6; margin: 0;">
+                        Not all mistakes cost the same. Domain-specific risk assessment remains expensive:
+                    </p>
+                    <ul style="font-size: 13px; color: #aaa; margin: 8px 0 0 20px; line-height: 1.8;">
+                        <li><strong style="color: #f59e0b;">Healthcare:</strong> HIPAA compliance scoring, diagnostic advice risk tiers</li>
+                        <li><strong style="color: #f59e0b;">Finance:</strong> SEC regulation adherence, material misstatement detection</li>
+                        <li><strong style="color: #f59e0b;">Legal:</strong> Jurisdiction-specific risk, precedent accuracy</li>
+                    </ul>
+                    <p style="font-size: 14px; color: #ccc; line-height: 1.6; margin: 12px 0 0 0;">
+                        These require deep domain expertise to build. OpenAI/Anthropic won't build industry-specific liability models for you.
+                    </p>
+                </div>
+
+                <div>
+                    <strong style="color: #f59e0b; display: block; margin-bottom: 8px;">3. The Data Flywheel</strong>
+                    <p style="font-size: 14px; color: #ccc; line-height: 1.6; margin: 0;">
+                        Your evaluation infrastructure becomes self-improving:
+                    </p>
+                    <ul style="font-size: 13px; color: #aaa; margin: 8px 0 0 20px; line-height: 1.8;">
+                        <li>Every rejection teaches the system</li>
+                        <li>Edge case repository grows over time</li>
+                        <li>Reward models fine-tune on YOUR user feedback</li>
+                        <li>Network effects: More usage → Better judges → Higher quality → More usage</li>
+                    </ul>
+                    <p style="font-size: 14px; color: #f59e0b; line-height: 1.6; margin: 16px 0 0 0; font-weight: 600;">
+                        This is NOT a product you buy once—it's a living system you cultivate.
+                    </p>
+                </div>
+            </div>
+
+            <div class="callout" style="margin-top: 24px; background: #fffbeb; border-left: 4px solid #f59e0b;">
+                <strong style="color: #f59e0b;">The Commoditization Question Answered:</strong><br>
+                <span style="color: #444;">Yes, basic evaluation will get cheaper (syntax, simple fact-checks). But consequence-weighted, brand-aligned, liability-aware judgment remains expensive because it's <strong>context-specific</strong> and <strong>accountability-bearing</strong>. That's where value accrues.</span>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -341,6 +421,146 @@
     </div>
 </section>
 
+<section class="slide" id="implementation">
+    <div class="container reveal">
+        <div class="label">07.5 &mdash; Implementation Blueprint</div>
+        <h2 class="js-split-text">How to Build This: The Technical Stack</h2>
+        <p>The Gatekeeper Model isn't theoretical. Here's how to implement each gate with specific tools and patterns.</p>
+
+        <div style="margin-top: 40px;">
+            <div class="box" style="margin-bottom: 24px; background: #f9f9f9; border-left: 4px solid #f59e0b;">
+                <div class="box-label" style="color: #f59e0b; font-size: 16px; margin-bottom: 12px;">GATE 1: SAFETY & COMPLIANCE</div>
+                <div style="font-size: 14px; color: #1a1a1a; line-height: 1.8;">
+                    <strong>Tools:</strong> OpenAI Moderation API, Azure Content Safety, custom regex patterns<br>
+                    <strong>Pattern:</strong> Multi-layer filtering (API + custom rules + PII detection)<br>
+                    <strong>Golden Set:</strong> 500+ test cases across prohibited content categories<br>
+                    <strong>Performance:</strong> ~50ms latency, <0.1% false positive rate<br>
+                    <strong>Code Example:</strong>
+                    <pre style="background: #1a1a1a; color: #10b981; padding: 16px; margin-top: 12px; border-radius: 4px; font-size: 12px; overflow-x: auto;">
+# Python implementation
+from openai import OpenAI
+import re
+
+def gate_1_safety(text):
+    # Layer 1: OpenAI Moderation
+    response = client.moderations.create(input=text)
+    if response.results[0].flagged:
+        return {"pass": False, "reason": "content_policy"}
+
+    # Layer 2: PII Detection
+    if re.search(r'\b\d{3}-\d{2}-\d{4}\b', text):  # SSN pattern
+        return {"pass": False, "reason": "pii_detected"}
+
+    # Layer 3: Custom brand safety rules
+    prohibited = ["guarantee", "promise", "refund"]
+    if any(term in text.lower() for term in prohibited):
+        return {"pass": False, "reason": "brand_safety"}
+
+    return {"pass": True}
+                    </pre>
+                </div>
+            </div>
+
+            <div class="box" style="margin-bottom: 24px; background: #f9f9f9; border-left: 4px solid #f59e0b;">
+                <div class="box-label" style="color: #f59e0b; font-size: 16px; margin-bottom: 12px;">GATE 2: TECHNICAL CORRECTNESS</div>
+                <div style="font-size: 14px; color: #1a1a1a; line-height: 1.8;">
+                    <strong>Tools:</strong> RAGAS, DeepEval, RAG verification against knowledge base<br>
+                    <strong>Pattern:</strong> Retrieval-augmented fact-checking + embedding similarity<br>
+                    <strong>Benchmark:</strong> Compare against ground truth database (product catalog, FAQ, docs)<br>
+                    <strong>Performance:</strong> ~200ms latency, 94% hallucination catch rate<br>
+                    <strong>Code Example:</strong>
+                    <pre style="background: #1a1a1a; color: #10b981; padding: 16px; margin-top: 12px; border-radius: 4px; font-size: 12px; overflow-x: auto;">
+# Hallucination detection using RAG
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import Pinecone
+
+def gate_2_correctness(query, ai_response, knowledge_base):
+    # Retrieve relevant facts from knowledge base
+    embeddings = OpenAIEmbeddings()
+    vectorstore = Pinecone.from_existing_index("kb", embeddings)
+    docs = vectorstore.similarity_search(query, k=3)
+
+    # Check if AI response is grounded in retrieved facts
+    fact_checker = OpenAI()
+    prompt = f"""
+    Retrieved Facts: {docs}
+    AI Response: {ai_response}
+
+    Does the AI response contradict or hallucinate beyond the facts?
+    Answer: YES (reject) or NO (pass)
+    """
+    result = fact_checker.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    return {"pass": "NO" in result.choices[0].message.content}
+                    </pre>
+                </div>
+            </div>
+
+            <div class="box" style="margin-bottom: 24px; background: #f9f9f9; border-left: 4px solid #f59e0b;">
+                <div class="box-label" style="color: #f59e0b; font-size: 16px; margin-bottom: 12px;">GATE 3: BRAND FIT & STYLE</div>
+                <div style="font-size: 14px; color: #1a1a1a; line-height: 1.8;">
+                    <strong>Tools:</strong> Claude Haiku 4.5 as Judge with brand style guide in system prompt<br>
+                    <strong>Pattern:</strong> Few-shot learning with 20-30 brand-aligned examples<br>
+                    <strong>Metrics:</strong> Cosine similarity to brand embedding space + tone classification<br>
+                    <strong>Performance:</strong> ~300ms latency, 87% brand consistency<br>
+                    <strong>Code Example:</strong>
+                    <pre style="background: #1a1a1a; color: #10b981; padding: 16px; margin-top: 12px; border-radius: 4px; font-size: 12px; overflow-x: auto;">
+# LLM-as-Judge for brand alignment
+import anthropic
+
+def gate_3_brand_fit(output, brand_guidelines):
+    client = anthropic.Anthropic()
+
+    prompt = f"""You are a brand quality judge for our company.
+
+BRAND GUIDELINES:
+- Tone: {brand_guidelines['tone']}
+- Voice: {brand_guidelines['voice']}
+- Forbidden phrases: {brand_guidelines['avoid']}
+
+EVALUATE THIS OUTPUT:
+{output}
+
+Score 0-100 and explain if it passes (>70).
+Format: {{"score": X, "passes": true/false, "reason": "..."}}"""
+
+    response = client.messages.create(
+        model="claude-haiku-4.5",
+        max_tokens=200,
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    result = json.loads(response.content[0].text)
+    return {"pass": result["passes"], "score": result["score"]}
+                    </pre>
+                </div>
+            </div>
+
+            <div class="box" style="margin-bottom: 24px; background: #f9f9f9; border-left: 4px solid #f59e0b;">
+                <div class="box-label" style="color: #f59e0b; font-size: 16px; margin-bottom: 12px;">GATE 4: EXCELLENCE (TASTE)</div>
+                <div style="font-size: 14px; color: #1a1a1a; line-height: 1.8;">
+                    <strong>Tools:</strong> Custom reward model (DeBERTa cross-encoder) trained on expert judgments<br>
+                    <strong>Training:</strong> 2,000+ expert-labeled pairs via pairwise ranking (Bradley-Terry model)<br>
+                    <strong>Architecture:</strong> Cross-encoder scoring model → scalar quality score 0-1<br>
+                    <strong>Fallback:</strong> Human review queue for top 5% uncertainty (scores 0.45-0.55)<br>
+                    <strong>Performance:</strong> ~100ms latency, 78% excellence threshold pass rate<br>
+                    <strong>Training Cost:</strong> ~$5-10K for quality labels (Scale AI or internal experts)<br><br>
+                    <strong>Key Insight:</strong> This is where your <span style="color: #f59e0b; font-weight: 600;">unique taste</span> gets encoded. Your training data = your competitive moat.
+                </div>
+            </div>
+        </div>
+
+        <div class="callout" style="margin-top: 32px; background: #1a1a1a; color: #fff; border: 1px solid #f59e0b;">
+            <strong style="color: #f59e0b;">INTEGRATION PATTERN:</strong><br>
+            Chain these gates sequentially. Fast gates first (safety), expensive gates last (taste).<br>
+            Early rejection = cost savings. Each gate only processes what passed the previous gate.
+        </div>
+    </div>
+</section>
+
 <section class="slide slide-dark" id="tradeoffs">
     <div class="container reveal">
         <div class="label">07b &mdash; Honest Limitations</div>
@@ -384,6 +604,101 @@
     </div>
 </section>
 
+<section class="slide" id="low-latency">
+    <div class="container reveal">
+        <div class="label">07c &mdash; Speed vs. Quality</div>
+        <h2 class="js-split-text">Making It Fast: Hybrid Architectures</h2>
+        <p>Rigorous LLM-as-Judge evaluation adds 500ms-2s latency. Unacceptable for voice assistants (<300ms), live chat (<1s), or code completion (<200ms).</p>
+
+        <div class="callout" style="margin: 32px 0; background: #fffbeb; border-left: 4px solid #f59e0b;">
+            <strong style="color: #f59e0b;">The Constraint:</strong><br>
+            <span style="color: #444;">You can't run GPT-5.2 as a judge on every keystroke. You need a tiered architecture that balances speed, cost, and coverage.</span>
+        </div>
+
+        <div style="margin-top: 40px; background: #1a1a1a; color: #fff; padding: 32px; border-radius: 8px;">
+            <h3 style="color: #f59e0b; margin-bottom: 24px; font-size: 20px;">Solution: Tiered Evaluation Architecture</h3>
+
+            <div style="font-family: monospace; font-size: 13px; line-height: 2; color: #ccc;">
+                <strong style="color: #10b981;">TIER 1: Fast Lane (~50ms)</strong><br>
+                ├─ Lightweight classifiers (distilled models: DistilBERT, TinyLlama)<br>
+                ├─ Regex/rule-based safety checks (keyword blocklists)<br>
+                ├─ Embedding-based brand similarity (cosine distance to brand centroid)<br>
+                ├─ Cached evaluations for common patterns (Redis lookup)<br>
+                └─ <strong style="color: #f59e0b;">Rejects: 40-50% of bad outputs</strong><br>
+                <br>
+                <span style="color: #666;">↓ Only if Tier 1 passes</span><br>
+                <br>
+                <strong style="color: #fbbf24;">TIER 2: Medium Lane (~300ms)</strong><br>
+                ├─ Smaller LLM judges (Claude Haiku 4.5, GPT-4o-mini)<br>
+                ├─ Focused prompts for specific risks (factuality, tone)<br>
+                ├─ Parallel execution (safety + brand checks simultaneously)<br>
+                └─ <strong style="color: #f59e0b;">Rejects: additional 30-35%</strong><br>
+                <br>
+                <span style="color: #666;">↓ Only for high-stakes outputs</span><br>
+                <br>
+                <strong style="color: #ef4444;">TIER 3: Thorough Lane (~1-2s)</strong><br>
+                ├─ Full Claude Sonnet / GPT-5.2 evaluation<br>
+                ├─ Multi-step reasoning chains<br>
+                ├─ Only for customer-facing, high-risk, or legal content<br>
+                ├─ <strong>Async pattern:</strong> User sees "Verifying..." loading state<br>
+                └─ <strong style="color: #f59e0b;">Catches: remaining 10-15% of critical issues</strong><br>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <h4 style="font-size: 18px; margin-bottom: 16px; color: #1a1a1a;">Pattern: Risk-Weighted Routing</h4>
+
+            <div class="two-col" style="gap: 24px;">
+                <div class="box" style="background: #f9f9f9;">
+                    <div class="box-label">Query Risk Classification</div>
+                    <ul style="font-size: 13px; padding-left: 20px; margin: 12px 0; line-height: 1.8;">
+                        <li><strong style="color: #10b981;">Low-risk:</strong> Internal tools, drafts, brainstorming → Tier 1 only</li>
+                        <li><strong style="color: #fbbf24;">Medium-risk:</strong> Customer emails, blog posts → Tier 1 + 2</li>
+                        <li><strong style="color: #ef4444;">High-risk:</strong> Legal docs, medical advice, financial → All 3 tiers</li>
+                    </ul>
+                </div>
+                <div class="box box-accent">
+                    <div class="box-label">Real-World Performance</div>
+                    <div style="font-size: 14px; margin: 12px 0; line-height: 1.8;">
+                        <strong>Baseline:</strong> Always-on full eval → 1,800ms P95 latency<br>
+                        <strong>Tiered:</strong> Risk-weighted routing → 280ms P95 latency<br>
+                        <strong>Coverage:</strong> 94% of critical issues caught<br>
+                        <strong>Cost:</strong> 60% reduction in eval compute
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; background: #f4f4f4; padding: 24px; border-radius: 8px;">
+            <h4 style="font-size: 16px; margin-bottom: 16px; color: #1a1a1a;">Advanced Optimization Techniques</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 13px; line-height: 1.8;">
+                <div>
+                    <strong style="color: #f59e0b;">1. Speculative Evaluation</strong><br>
+                    <span style="color: #666;">Start eval before generation completes (streaming). Cancel if user stops typing.</span>
+                </div>
+                <div>
+                    <strong style="color: #f59e0b;">2. Batch Processing</strong><br>
+                    <span style="color: #666;">For async contexts (email, reports), batch 10-50 evals together for better throughput.</span>
+                </div>
+                <div>
+                    <strong style="color: #f59e0b;">3. Progressive Disclosure</strong><br>
+                    <span style="color: #666;">Show output immediately with confidence score. Upgrade to Tier 2/3 in background.</span>
+                </div>
+                <div>
+                    <strong style="color: #f59e0b;">4. Semantic Caching</strong><br>
+                    <span style="color: #666;">Cache eval results by embedding similarity. Similar inputs → reuse judgments (90%+ hit rate).</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="callout" style="margin-top: 32px; background: #1a1a1a; color: #fff; border: 1px solid #f59e0b;">
+            <strong style="color: #f59e0b;">Emergency Fallback Pattern:</strong><br>
+            If all gates fail or timeout, show: <span style="color: #ccc;">"Let me check with a human colleague on this. I want to make sure I give you accurate information."</span><br><br>
+            <span style="opacity: 0.8; font-size: 13px;">Graceful degradation > shipping unverified outputs.</span>
+        </div>
+    </div>
+</section>
+
 <section class="slide" id="predictions">
     <div class="container reveal">
         <div class="label">08 &mdash; Directional Indicators</div>
@@ -419,6 +734,129 @@
                 <div class="box-label">The Laggard's Fate</div>
                 <div style="font-size: 14px; color: #666;">Drown in the operational noise of unverified generation.</div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="slide slide-dark" id="metrics">
+    <div class="container reveal">
+        <div class="label">08.5 &mdash; Operational Excellence</div>
+        <h2 class="js-split-text">Measuring Success: The Eval Scorecard</h2>
+        <p style="color: #888;">You can't improve what you don't measure. Here are the KPIs that matter for evaluation infrastructure.</p>
+
+        <div style="margin-top: 40px;">
+            <h3 style="color: #f59e0b; font-size: 20px; margin-bottom: 24px;">Core Metrics: The 6 Numbers You Must Track</h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px;">
+                <div class="box box-dark" style="border: 1px solid #333;">
+                    <div class="box-label" style="color: #f59e0b;">1. Defect Escape Rate (DER)</div>
+                    <div style="font-size: 14px; color: #ccc; line-height: 1.8; margin-top: 12px;">
+                        <strong style="color: #fff;">Formula:</strong> Critical defects reaching production / Total outputs<br>
+                        <strong style="color: #fff;">Target:</strong> <0.5% (vs. 5-8% baseline without evals)<br>
+                        <strong style="color: #fff;">Why it matters:</strong> This is your north star. Every escaped defect is a potential incident.
+                    </div>
+                </div>
+
+                <div class="box box-dark" style="border: 1px solid #333;">
+                    <div class="box-label" style="color: #f59e0b;">2. Precision @ Gate</div>
+                    <div style="font-size: 14px; color: #ccc; line-height: 1.8; margin-top: 12px;">
+                        <strong style="color: #fff;">Formula:</strong> True positives / (True positives + False positives)<br>
+                        <strong style="color: #fff;">Target:</strong> >90% (avoid over-rejecting good content)<br>
+                        <strong style="color: #fff;">Why it matters:</strong> Low precision = wasting good outputs, frustrating users.
+                    </div>
+                </div>
+
+                <div class="box box-dark" style="border: 1px solid #333;">
+                    <div class="box-label" style="color: #f59e0b;">3. Recall @ Gate</div>
+                    <div style="font-size: 14px; color: #ccc; line-height: 1.8; margin-top: 12px;">
+                        <strong style="color: #fff;">Formula:</strong> True positives / (True positives + False negatives)<br>
+                        <strong style="color: #fff;">Target:</strong> >95% (catch the bad stuff)<br>
+                        <strong style="color: #fff;">Why it matters:</strong> Low recall = defects slip through, undermining trust.
+                    </div>
+                </div>
+
+                <div class="box box-dark" style="border: 1px solid #333;">
+                    <div class="box-label" style="color: #f59e0b;">4. Evaluation Cost per Output</div>
+                    <div style="font-size: 14px; color: #ccc; line-height: 1.8; margin-top: 12px;">
+                        <strong style="color: #fff;">Formula:</strong> (Infrastructure + Compute) / Outputs processed<br>
+                        <strong style="color: #fff;">Target:</strong> <20% of generation cost<br>
+                        <strong style="color: #fff;">Why it matters:</strong> Economics must work. Eval shouldn't 10x your AI bill.
+                    </div>
+                </div>
+
+                <div class="box box-dark" style="border: 1px solid #333;">
+                    <div class="box-label" style="color: #f59e0b;">5. P95 Latency</div>
+                    <div style="font-size: 14px; color: #ccc; line-height: 1.8; margin-top: 12px;">
+                        <strong style="color: #fff;">Formula:</strong> 95th percentile eval time<br>
+                        <strong style="color: #fff;">Target:</strong> <500ms for async, <200ms for sync<br>
+                        <strong style="color: #fff;">Why it matters:</strong> User experience. Slow evals kill product velocity.
+                    </div>
+                </div>
+
+                <div class="box box-dark" style="border: 1px solid #333;">
+                    <div class="box-label" style="color: #f59e0b;">6. Human Review Queue Size</div>
+                    <div style="font-size: 14px; color: #ccc; line-height: 1.8; margin-top: 12px;">
+                        <strong style="color: #fff;">Formula:</strong> Outputs flagged for manual review / Total outputs<br>
+                        <strong style="color: #fff;">Target:</strong> <5% (keep humans in loop, but efficient)<br>
+                        <strong style="color: #fff;">Why it matters:</strong> Scalability. 20% queue = you need a review army.
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #1a1a1a; border: 2px solid #f59e0b; padding: 32px; border-radius: 8px; font-family: monospace; font-size: 13px;">
+                <div style="color: #f59e0b; font-size: 16px; margin-bottom: 20px; font-weight: 700;">EXAMPLE DASHBOARD (Last 30 Days)</div>
+                <div style="line-height: 2.2; color: #ccc;">
+                    <div style="border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 12px;">
+                        <span style="color: #666;">Metric</span>
+                        <span style="float: right; color: #666;">Value</span>
+                        <span style="float: right; margin-right: 80px; color: #666;">Status</span>
+                    </div>
+                    <div><span style="color: #fff;">Defect Escape Rate</span> <span style="float: right; color: #fff;">0.3%</span> <span style="float: right; margin-right: 60px; color: #10b981;">🟢 EXCELLENT</span></div>
+                    <div><span style="color: #fff;">Gate 3 Precision</span> <span style="float: right; color: #fff;">87%</span> <span style="float: right; margin-right: 60px; color: #fbbf24;">🟡 TUNE</span></div>
+                    <div><span style="color: #fff;">Overall Recall</span> <span style="float: right; color: #fff;">96%</span> <span style="float: right; margin-right: 60px; color: #10b981;">🟢 EXCELLENT</span></div>
+                    <div><span style="color: #fff;">Cost per Output</span> <span style="float: right; color: #fff;">$0.008</span> <span style="float: right; margin-right: 60px; color: #10b981;">🟢 EXCELLENT</span></div>
+                    <div><span style="color: #fff;">P95 Latency</span> <span style="float: right; color: #fff;">340ms</span> <span style="float: right; margin-right: 60px; color: #10b981;">🟢 EXCELLENT</span></div>
+                    <div><span style="color: #fff;">Review Queue</span> <span style="float: right; color: #fff;">3.2%</span> <span style="float: right; margin-right: 60px; color: #10b981;">🟢 EXCELLENT</span></div>
+                </div>
+                <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #333; color: #888; font-size: 11px;">
+                    🟢 EXCELLENT: Meeting target &nbsp;&nbsp; 🟡 TUNE: Needs optimization &nbsp;&nbsp; 🔴 CRITICAL: Immediate action required
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <h3 style="color: #f59e0b; font-size: 18px; margin-bottom: 16px;">Secondary Metrics: Trend Indicators</h3>
+            <div class="two-col" style="gap: 24px;">
+                <div class="box box-dark" style="border: 1px solid #333;">
+                    <div class="box-label" style="color: #ccc;">Model Drift</div>
+                    <div style="font-size: 13px; color: #888; line-height: 1.8; margin-top: 8px;">
+                        Track eval score distribution over time. Sudden shifts = upstream model changed or attack pattern emerged.
+                    </div>
+                </div>
+                <div class="box box-dark" style="border: 1px solid #333;">
+                    <div class="box-label" style="color: #ccc;">Golden Set Staleness</div>
+                    <div style="font-size: 13px; color: #888; line-height: 1.8; margin-top: 8px;">
+                        Re-run tests monthly. If pass rate changes >5%, your benchmark is rotting. Update it.
+                    </div>
+                </div>
+                <div class="box box-dark" style="border: 1px solid #333;">
+                    <div class="box-label" style="color: #ccc;">Edge Case Coverage</div>
+                    <div style="font-size: 13px; color: #888; line-height: 1.8; margin-top: 8px;">
+                        % of human escalations that are truly novel vs. should-have-been-caught. Growing = learning. Flat = stagnant.
+                    </div>
+                </div>
+                <div class="box box-dark" style="border: 1px solid #333;">
+                    <div class="box-label" style="color: #ccc;">Rejection Distribution</div>
+                    <div style="font-size: 13px; color: #888; line-height: 1.8; margin-top: 8px;">
+                        Which gate rejects most? Safety (expected) or Taste (might indicate poor generation prompts).
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="callout" style="margin-top: 32px; background: #333; border-color: #f59e0b;">
+            <strong style="color: #f59e0b;">The Litmus Test (Revisited):</strong><br>
+            <span style="color: #fff;">If you cannot answer "What's our defect escape rate this month?" in under 10 seconds, you don't have Taste Infrastructure. You have <span class="accent">hope</span>.</span>
         </div>
     </div>
 </section>
@@ -523,6 +961,215 @@
                 <tr><td>Foundational</td><td><a href="https://gwern.net/doc/design/1971-simon.pdf" target="_blank">Simon (1971) — Designing Organizations for an Information-Rich World</a></td></tr>
             </tbody>
         </table>
+    </div>
+</section>
+
+<section class="slide slide-dark" id="appendix">
+    <div class="container reveal">
+        <div class="label">Technical Appendix</div>
+        <h2 class="js-split-text">Deep Dive: Building Evaluation Systems</h2>
+        <p style="color: #888; margin-bottom: 40px;">For technical teams ready to implement. This section covers reward model training, LLM-as-Judge patterns, and Golden Set construction.</p>
+
+        <div style="margin-bottom: 48px;">
+            <h3 style="color: #f59e0b; font-size: 22px; margin-bottom: 24px;">Appendix A: Building Your First Reward Model</h3>
+
+            <div class="box box-dark" style="border: 1px solid #333; margin-bottom: 24px;">
+                <div class="box-label">Architecture & Training Approach</div>
+                <div style="font-size: 14px; color: #ccc; line-height: 1.8; margin-top: 12px;">
+                    <strong style="color: #f59e0b;">Base Model:</strong> DeBERTa-v3-large or similar cross-encoder (350M params)<br>
+                    <strong style="color: #f59e0b;">Training Method:</strong> Pairwise ranking using Bradley-Terry model<br>
+                    <strong style="color: #f59e0b;">Output:</strong> Scalar quality score 0-1 (higher = better)<br>
+                    <strong style="color: #f59e0b;">Typical Accuracy:</strong> 85-92% agreement with human experts after fine-tuning
+                </div>
+            </div>
+
+            <div style="background: #1a1a1a; padding: 24px; border-radius: 8px; margin-bottom: 24px;">
+                <strong style="color: #f59e0b; display: block; margin-bottom: 12px; font-size: 15px;">Training Data Requirements</strong>
+                <div style="font-size: 13px; color: #ccc; line-height: 2;">
+                    <strong style="color: #fff;">Minimum viable:</strong> 1,000 comparison pairs (A vs. B judgments)<br>
+                    <strong style="color: #fff;">Recommended:</strong> 5,000+ pairs for production quality<br>
+                    <strong style="color: #fff;">Collection method:</strong> Expert A/B judgments on real outputs from your domain<br>
+                    <strong style="color: #fff;">Cost estimate:</strong> ~$5-10K for quality labels (Scale AI, Surge AI, or internal experts)<br>
+                    <strong style="color: #fff;">Labeling time:</strong> ~30 seconds per pair with trained raters
+                </div>
+            </div>
+
+            <div style="background: #0a0a0a; padding: 24px; border-radius: 8px; border: 1px solid #333;">
+                <strong style="color: #f59e0b; display: block; margin-bottom: 16px;">Code Example: Training a Reward Model</strong>
+                <pre style="margin: 0; color: #10b981; font-family: monospace; font-size: 12px; line-height: 1.8; overflow-x: auto;">
+<span style="color: #666;"># Install: pip install sentence-transformers datasets</span>
+from sentence_transformers import CrossEncoder
+from torch.utils.data import DataLoader
+
+<span style="color: #666;"># Load your comparison data</span>
+<span style="color: #666;"># Format: [(prompt, output_A, output_B, label)]</span>
+<span style="color: #666;"># label = 1 if A > B, 0 if B > A</span>
+train_samples = [
+    {'texts': [prompt, good_output], 'label': 1},
+    {'texts': [prompt, bad_output], 'label': 0},
+    <span style="color: #666;"># ... more pairs</span>
+]
+
+<span style="color: #666;"># Initialize cross-encoder</span>
+model = CrossEncoder(
+    'cross-encoder/ms-marco-MiniLM-L-6-v2',
+    num_labels=1,  <span style="color: #666;"># Regression task</span>
+    max_length=512
+)
+
+<span style="color: #666;"># Fine-tune on your domain data</span>
+model.fit(
+    train_dataloader=DataLoader(train_samples, batch_size=16),
+    epochs=3,
+    warmup_steps=100,
+    evaluation_steps=500
+)
+
+<span style="color: #666;"># Save for production</span>
+model.save('models/quality-judge-v1')
+
+<span style="color: #666;"># Inference: Score a new output</span>
+score = model.predict([[prompt, candidate_output]])[0]
+<span style="color: #fbbf24;">if</span> score < 0.65:  <span style="color: #666;"># Tune threshold based on precision/recall</span>
+    reject_output()
+<span style="color: #fbbf24;">else</span>:
+    ship_output()
+                </pre>
+            </div>
+
+            <div class="callout" style="margin-top: 24px; background: #333; border-color: #f59e0b;">
+                <strong style="color: #f59e0b;">Pro Tip:</strong><br>
+                <span style="color: #ccc;">Start with 500 pairs to validate the approach. If accuracy >80%, scale to 5K pairs. If <70%, your labeling instructions are unclear or task is too subjective.</span>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 48px;">
+            <h3 style="color: #f59e0b; font-size: 22px; margin-bottom: 24px;">Appendix B: LLM-as-Judge Prompt Engineering</h3>
+
+            <div style="background: #1a1a1a; padding: 24px; border-radius: 8px; margin-bottom: 24px;">
+                <strong style="color: #f59e0b; display: block; margin-bottom: 16px; font-size: 15px;">Pattern: Constitutional AI Principles</strong>
+                <div style="font-size: 13px; color: #888; line-height: 1.8; margin-bottom: 16px;">
+                    Define explicit evaluation criteria as "constitutional principles." The judge evaluates adherence to these principles.
+                </div>
+                <pre style="margin: 0; color: #10b981; font-family: monospace; font-size: 12px; line-height: 1.8; overflow-x: auto; background: #0a0a0a; padding: 16px; border-radius: 4px;">
+You are a brand quality judge for [COMPANY_NAME].
+
+<span style="color: #f59e0b;">CONSTITUTIONAL PRINCIPLES:</span>
+1. <span style="color: #fff;">Factual Accuracy:</span> No claims without citation or verification
+2. <span style="color: #fff;">Tone:</span> Professional, warm, never condescending or jargony
+3. <span style="color: #fff;">Structure:</span> Clear headings, bullet points, <500 words
+4. <span style="color: #fff;">Legal Safety:</span> No medical advice, no guarantees, no financial recommendations
+5. <span style="color: #fff;">Brand Voice:</span> [YOUR_BRAND_VOICE_DESCRIPTION]
+
+<span style="color: #f59e0b;">OUTPUT FORMAT (JSON):</span>
+{
+  "score": 0-100,
+  "passes": true/false,
+  "reasoning": "Brief explanation of why it passes or fails",
+  "failed_principles": ["principle_name"],
+  "severity": "low/medium/high"
+}
+
+<span style="color: #f59e0b;">CANDIDATE OUTPUT TO EVALUATE:</span>
+{output}
+
+<span style="color: #f59e0b;">YOUR EVALUATION:</span>
+                </pre>
+            </div>
+
+            <div class="two-col" style="gap: 24px; margin-top: 24px;">
+                <div class="box box-dark" style="border: 1px solid #333;">
+                    <div class="box-label" style="color: #f59e0b;">Calibration Process</div>
+                    <ul style="font-size: 13px; padding-left: 20px; margin: 12px 0; line-height: 1.8; color: #ccc;">
+                        <li>Test on 100 samples with known outcomes</li>
+                        <li>Measure precision and recall at different score thresholds</li>
+                        <li>Adjust threshold until Precision ≈ Recall ≈ 92%</li>
+                        <li>Monitor for prompt drift (retest monthly)</li>
+                        <li>Version your prompts (Git commit prompts like code)</li>
+                    </ul>
+                </div>
+                <div class="box box-dark" style="border: 1px solid #333;">
+                    <div class="box-label" style="color: #f59e0b;">Common Pitfalls</div>
+                    <ul style="font-size: 13px; padding-left: 20px; margin: 12px 0; line-height: 1.8; color: #ccc;">
+                        <li><strong>Vague criteria:</strong> "Good quality" → Define precisely</li>
+                        <li><strong>Too many principles:</strong> >7 principles = confusion</li>
+                        <li><strong>No examples:</strong> Add 2-3 pass/fail examples</li>
+                        <li><strong>Model bias:</strong> GPT-5.2 prefers longer outputs. Normalize for length.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 48px;">
+            <h3 style="color: #f59e0b; font-size: 22px; margin-bottom: 24px;">Appendix C: Golden Set Construction</h3>
+
+            <div class="box box-dark" style="border: 1px solid #333; margin-bottom: 24px;">
+                <div class="box-label">What is a Golden Set?</div>
+                <div style="font-size: 14px; color: #ccc; line-height: 1.8; margin-top: 12px;">
+                    A carefully curated test suite of inputs with known expected outputs. Your "unit tests" for AI evaluation.
+                    <br><br>
+                    <strong style="color: #f59e0b;">Purpose:</strong> Detect regression when you change prompts, models, or eval logic.
+                </div>
+            </div>
+
+            <div style="background: #1a1a1a; padding: 24px; border-radius: 8px;">
+                <strong style="color: #f59e0b; display: block; margin-bottom: 16px; font-size: 15px;">Construction Protocol</strong>
+                <div style="font-size: 13px; color: #ccc; line-height: 2;">
+                    <strong style="color: #fff;">Step 1: Sample Real Traffic</strong><br>
+                    &nbsp;&nbsp;├─ Collect 500-1000 representative inputs from production<br>
+                    &nbsp;&nbsp;├─ Include edge cases (ambiguous, adversarial, boundary conditions)<br>
+                    &nbsp;&nbsp;└─ Cover full distribution (common queries + rare dangerous ones)<br>
+                    <br>
+                    <strong style="color: #fff;">Step 2: Generate & Label</strong><br>
+                    &nbsp;&nbsp;├─ Run through your AI system<br>
+                    &nbsp;&nbsp;├─ Expert humans label: PASS / FAIL / UNCERTAIN<br>
+                    &nbsp;&nbsp;├─ For each, record: Why pass? Why fail? Which gate should catch?<br>
+                    &nbsp;&nbsp;└─ Discard "UNCERTAIN" cases (too ambiguous to test against)<br>
+                    <br>
+                    <strong style="color: #fff;">Step 3: Version & Automate</strong><br>
+                    &nbsp;&nbsp;├─ Store in Git (JSON/CSV with metadata)<br>
+                    &nbsp;&nbsp;├─ CI/CD runs Golden Set on every prompt change<br>
+                    &nbsp;&nbsp;└─ Alert if pass rate drops >3%<br>
+                    <br>
+                    <strong style="color: #fff;">Step 4: Refresh Quarterly</strong><br>
+                    &nbsp;&nbsp;├─ Models change, attack patterns evolve<br>
+                    &nbsp;&nbsp;├─ Add 50-100 new cases per quarter<br>
+                    &nbsp;&nbsp;└─ Archive obsolete cases (no longer representative)
+                </div>
+            </div>
+
+            <div class="two-col" style="gap: 24px; margin-top: 24px;">
+                <div class="box box-dark" style="border: 1px solid #f59e0b;">
+                    <div class="box-label">Minimum Viable Golden Set</div>
+                    <div style="font-size: 13px; color: #ccc; margin-top: 12px; line-height: 1.8;">
+                        <strong>Total:</strong> 200 cases<br>
+                        • 100 PASS cases (should ship)<br>
+                        • 100 FAIL cases (should reject)<br>
+                        • Covers each gate (25 per gate)<br>
+                        <br>
+                        <strong style="color: #f59e0b;">Start here.</strong> Expand to 500+ for production.
+                    </div>
+                </div>
+                <div class="box box-dark" style="border: 1px solid #333;">
+                    <div class="box-label">Example Structure</div>
+                    <pre style="font-size: 11px; color: #10b981; margin: 8px 0 0 0; line-height: 1.6; overflow-x: auto;">
+{
+  "id": "case_001",
+  "input": "What's the refund policy?",
+  "output": "We guarantee full refunds...",
+  "expected": "FAIL",
+  "gate": "safety",
+  "reason": "Uses word 'guarantee'"
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="callout" style="background: #333; border-color: #f59e0b;">
+            <strong style="color: #f59e0b;">The Golden Rule:</strong><br>
+            <span style="color: #fff;">Your Golden Set is only as good as your worst mislabeled case. If you're unsure, get a second opinion. Garbage in = false confidence out.</span>
+        </div>
     </div>
 </section>
 
