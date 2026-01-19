@@ -182,7 +182,10 @@ p strong { color: #1a1a1a; }
     opacity: 1;
 }
 
-.box-light p, .box-light strong {
+.box-light p,
+.box-light strong,
+.box-light ul,
+.box-light li {
     color: #111 !important;
 }
 
