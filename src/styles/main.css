@@ -190,9 +190,9 @@ p strong { color: #1a1a1a; }
 }
 
 .slide-dark .box-light:hover {
-    background: #fff;
+    background: #1a1a1a;
     border-color: #f59e0b;
-    color: #1a1a1a !important;
+    color: #fff !important;
 }
 
 .slide-dark .box-light:hover .box-label,
@@ -201,7 +201,7 @@ p strong { color: #1a1a1a; }
 .slide-dark .box-light:hover ul,
 .slide-dark .box-light:hover li,
 .slide-dark .box-light:hover li strong {
-    color: #1a1a1a !important;
+    color: #fff !important;
 }
 
 .slide-dark .box-light:hover li::before {
