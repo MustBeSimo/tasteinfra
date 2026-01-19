@@ -196,7 +196,8 @@ p strong { color: #1a1a1a; }
 .slide-dark .box-light:hover p,
 .slide-dark .box-light:hover strong,
 .slide-dark .box-light:hover ul,
-.slide-dark .box-light:hover li {
+.slide-dark .box-light:hover li,
+.slide-dark .box-light:hover li strong {
     color: #1a1a1a !important;
 }
 
