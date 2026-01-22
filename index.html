@@ -141,9 +141,9 @@
         </div>
 
         <p style="font-size: 18px; color: #1a1a1a; line-height: 1.7; margin: 32px 0; padding: 24px; background: #f9f9f9; border-left: 3px solid #dc2626;">
-            <strong style="color: #dc2626;">Here's what's happening right now in your organization:</strong><br><br>
-            Your AI team celebrates ship velocity. Nobody owns accuracy. The PM assumes the model is "good enough." The engineer assumes someone else is checking. The legal team doesn't know what questions to ask. <br><br>
-            <strong>The customer finds out first.</strong>
+            <strong style="color: #dc2626;">The Common Failure Mode: Ad-Hoc Evaluation</strong><br><br>
+            Many organizations rely on "vibes-based" spot checks rather than systematic gating. The AI team tracks velocity, but ownership of <em>accuracy</em> falls through the cracks between Engineering (who build pipelines) and Product/Legal (who define quality). <br><br>
+            <strong>Without a dedicated evaluation layer, the customer becomes the QA team.</strong>
         </p>
 
         <p class="js-split-text">The AI industry delivered "generation at scale."</p>
@@ -283,9 +283,44 @@
                 </div>
             </div>
         </div>
-        <div class="callout callout-dark" style="margin-top: 40px;">
-            <h4 style="margin-bottom: 12px; color: #f59e0b;">The training signal</h4>
-            <p style="margin: 0; color: #fff;">"Taste" is not a soft skill in an AI economy. <strong>It is the training signal.</strong></p>
+        
+        <!-- Moved Decision Framework Here -->
+        <div style="margin-top: 64px; padding-top: 48px; border-top: 1px solid #333;">
+            <h3 style="font-size: 24px; color: #f59e0b; margin-bottom: 24px;">Who Owns This?</h3>
+            <p style="font-size: 16px; color: #ccc; margin-bottom: 32px;">
+                Engineering, Legal, and Product have different budgets and incentives.
+            </p>
+            
+            <table style="margin: 32px 0; font-size: 14px;">
+                <thead>
+                    <tr>
+                        <th>Stakeholder</th>
+                        <th>What They Care About</th>
+                        <th>Budget Source</th>
+                        <th>Your Pitch</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Engineering/CTO</strong></td>
+                        <td>Ship velocity, incident rate</td>
+                        <td>Platform/Infra</td>
+                        <td>"Reduce on-call incidents from AI failures"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Risk/Legal/CISO</strong></td>
+                        <td>Liability exposure, compliance</td>
+                        <td>Risk budget</td>
+                        <td>"Auditable defense against AI liability"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Product/Brand</strong></td>
+                        <td>Customer trust, NPS</td>
+                        <td>Product budget</td>
+                        <td>"Quality as differentiator, not cost center"</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
@@ -298,53 +333,37 @@
         
         <div style="margin-top: 32px; background: #1a1a1a; border: 1px solid #333; padding: 32px; border-radius: 8px;">
             <div style="font-family: monospace; font-size: 13px; color: #ccc; line-height: 2;">
-                <strong style="color: #f59e0b; font-size: 15px;">Generic The Taste Layer Template (Gatekeeper Model)</strong>
+                <strong style="color: #f59e0b; font-size: 15px;">The Artifact: A Production Trace</strong>
                 <br>
-                <span style="font-size: 11px; color: #888; font-style: italic;">Illustrative example. Calibrate survival rates to your domain SLOs.</span>
-                <br><br>
-                <span style="color: #666;">INPUT:</span> AI-generated candidate (Draft, Image, Code, Response)<br>
-                <span style="color: #666;">&darr;</span> <span style="opacity: 0.5;">(1,000 candidates generated)</span>
+                <span style="font-size: 11px; color: #888; font-style: italic;">Real-world example of the Taste Layer intercepting a defect.</span>
                 <br><br>
                 
-                <strong style="color: #f59e0b;">GATE 1: SAFETY GATE (Policy & Privacy)</strong><br>
-                &boxvr;&boxh;&boxh; Check: PII detection, brand safety, regulatory alignment<br>
-                &boxvr;&boxh;&boxh; Tool: Content moderation layer + custom regex/ML filters<br>
-                &boxvr;&boxh;&boxh; <span style="color: #ef4444;">Reject if: Prohibited content or legal risk detected</span><br>
-                &boxvr;&boxh;&boxh; <span style="color: #f59e0b;">Action: Block & Log Incident</span><br>
-                &boxur;&boxh;&boxh; <span style="color: #10b981;">Survival: 95-99%</span><br>
-                <span style="color: #666;">&darr;</span>
-                <br><br>
-                
-                <strong style="color: #f59e0b;">GATE 2: TECHNICAL GATE (Correctness)</strong><br>
-                &boxvr;&boxh;&boxh; Check: Logical consistency, factual accuracy, syntax<br>
-                &boxvr;&boxh;&boxh; Tool: Golden set comparison + automated verification<br>
-                &boxvr;&boxh;&boxh; <span style="color: #ef4444;">Reject if: Hallucinations or technical artifacts present</span><br>
-                &boxvr;&boxh;&boxh; <span style="color: #f59e0b;">Action: Retry with Self-Correction Prompt</span><br>
-                &boxur;&boxh;&boxh; <span style="color: #10b981;">Survival: 85-95%</span><br>
-                <span style="color: #666;">&darr;</span>
-                <br><br>
-                
-                <strong style="color: #f59e0b;">GATE 3: BRAND GATE (Style & Tone)</strong><br>
-                &boxvr;&boxh;&boxh; Check: Tone of voice, visual language, style guide alignment<br>
-                &boxvr;&boxh;&boxh; Tool: LLM-as-a-Judge + brand-specific embeddings<br>
-                &boxvr;&boxh;&boxh; <span style="color: #ef4444;">Reject if: Off-brand tone or stylistic deviation</span><br>
-                &boxvr;&boxh;&boxh; <span style="color: #f59e0b;">Action: Route to Human Review</span><br>
-                &boxur;&boxh;&boxh; <span style="color: #10b981;">Survival: 70-85%</span><br>
-                <span style="color: #666;">&darr;</span>
-                <br><br>
-                
-                <strong style="color: #f59e0b;">GATE 4: EXCELLENCE GATE (Utility & Spark)</strong><br>
-                &boxvr;&boxh;&boxh; Check: High-end quality, creative spark, human-like nuance<br>
-                &boxvr;&boxh;&boxh; Tool: Reward model ranker (trained on expert judgments) + human review for edge cases (top 5% uncertainty)<br>
-                &boxvr;&boxh;&boxh; <span style="color: #ef4444;">Reject if: "Average" or uninspired output</span><br>
-                &boxvr;&boxh;&boxh; <span style="color: #f59e0b;">Action: Flag for A/B Testing</span><br>
-                &boxur;&boxh;&boxh; <span style="color: #10b981;">Survival: 50-75%</span><br>
-                <span style="color: #666;">&darr;</span>
-                <br><br>
-                
-                <span style="color: #666;">SHIP:</span> <strong style="color: #fff;">~60% final pass rate</strong><br>
-                <span style="color: #666;">Outcome:</span> <strong style="color: #10b981;">Quality becomes the edge. Orders-of-magnitude reduction in critical defects.</strong>
-                <div style="font-size: 11px; color: #666; margin-top: 16px; font-style: italic;">* Illustrative survival rates for high-stakes customer communications.</div>
+                <div style="background: #000; border: 1px solid #333; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 12px; color: #ccc;">
+                    <div style="margin-bottom: 12px; border-bottom: 1px dashed #444; padding-bottom: 12px;">
+                        <span style="color: #666;">INPUT (Draft):</span><br>
+                        <span style="color: #fff;">"Our Pro plan offers 24/7 phone support and unlimited API credits."</span>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                        <div>
+                            <span style="color: #f59e0b;">GATE 1: SAFETY</span><br>
+                            <span style="color: #10b981;">[PASS]</span> No PII detected.<br>
+                            <span style="color: #10b981;">[PASS]</span> Brand safety check.
+                        </div>
+                        <div>
+                            <span style="color: #f59e0b;">GATE 2: FACTS</span><br>
+                            <span style="color: #ef4444;">[FAIL]</span> Hallucination detected.<br>
+                            <span style="color: #888;">&gt; Policy: Pro plan has email-only support.<br>
+                            &gt; Source: kb_pricing_v2.md</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 12px; border-top: 1px dashed #444; padding-top: 12px;">
+                        <span style="color: #f59e0b;">DECISION:</span> <strong style="color: #ef4444;">BLOCK</strong><br>
+                        <span style="color: #f59e0b;">ACTION:</span> Retry with correction prompt (Temperature: 0.2)<br>
+                        <span style="color: #666;">LOG_ID:</span> <code>trace_9f8a7d2</code> <span style="color: #444;">(Stored for Audit)</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -358,7 +377,7 @@
             <div class="box box-dark" style="border: 1px solid #f59e0b;">
                 <div class="box-label">With Gates</div>
                 <div style="font-size: 14px; color: #ccc; line-height: 1.6;">
-                    Filter before shipping &rarr; 36% rejected internally &rarr; Orders-of-magnitude reduction in critical defects &rarr; Quality becomes the brand
+                    Filter before shipping &rarr; 36% rejected internally &rarr; Verified reduction in defect rate &rarr; Quality becomes the brand
                 </div>
             </div>
         </div>
@@ -377,26 +396,43 @@
         <p>This is not just a philosophy. It is a set of tangible artifacts that your engineering, legal, and product teams will own.</p>
         
         <div class="grid-col-2" style="margin-top: 32px; gap: 24px; display: grid; grid-template-columns: 1fr 1fr;">
-            <div class="box" style="border: 1px solid #333;">
-                <div class="box-label" style="color: #f59e0b;">1. The Evaluation Spec</div>
-                <ul style="font-size: 13px; color: #ccc; margin: 8px 0 0 16px; line-height: 1.6;">
-                    <li><strong>Rubric Definition:</strong> Precise pass/fail criteria for Safety, Tone, and Accuracy.</li>
-                    <li><strong>Failure Taxonomy:</strong> Standardized error codes (e.g., HALLUCINATION_FACT, UNSAFE_PII, OFF_BRAND).</li>
-                    <li><strong>Risk Appetite Thresholds:</strong> Configurable acceptance rates per use case.</li>
-                </ul>
-            </div>
-            <div class="box" style="border: 1px solid #333;">
-                <div class="box-label" style="color: #f59e0b;">2. The Test Suite</div>
-                <ul style="font-size: 13px; color: #ccc; margin: 8px 0 0 16px; line-height: 1.6;">
-                    <li><strong>Golden Set:</strong> 100+ expert-verified examples of "perfect" inputs/outputs.</li>
-                    <li><strong>Adversarial Prompts:</strong> "Red team" dataset designed to break your model (jailbreaks, injections).</li>
-                    <li><strong>Regression Suite:</strong> Historical failures to ensure bugs don't return.</li>
-                </ul>
+            <div class="box" style="border: 1px solid #333; grid-column: span 2;">
+                <div class="box-label" style="color: #f59e0b;">1. The Evaluation Spec (Artifacts)</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 12px;">
+                    <div>
+                        <strong style="font-size: 13px; color: #fff;">Failure Taxonomy (Example)</strong>
+                        <pre style="font-family: monospace; font-size: 11px; color: #aaa; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 4px; overflow-x: auto;">
+{
+  "CRITICAL": {
+    "HALLUCINATION_FACT": "Claims contradiction with retrieval ctx",
+    "UNSAFE_PII": "Contains email/phone/SSN",
+    "ILLEGAL_ADVICE": "Offers medical/legal judgment"
+  },
+  "WARN": {
+    "OFF_BRAND_TONE": "Tone mismatch score > 0.4",
+    "VERBOSITY": "Response > 150 words"
+  }
+}</pre>
+                    </div>
+                    <div>
+                        <strong style="font-size: 13px; color: #fff;">Rubric (DSPy Signature)</strong>
+                        <pre style="font-family: monospace; font-size: 11px; color: #aaa; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 4px; overflow-x: auto;">
+class FactJudge(dspy.Signature):
+    """Judge if response is supported by context."""
+    
+    context = dspy.InputField()
+    response = dspy.InputField()
+    
+    # Output
+    is_supported = dspy.OutputField(desc="True/False")
+    citation_check = dspy.OutputField(desc="List of missing citations")</pre>
+                    </div>
+                </div>
             </div>
             <div class="box" style="border: 1px solid #333;">
                 <div class="box-label" style="color: #f59e0b;">3. The Judge Stack</div>
                 <ul style="font-size: 13px; color: #ccc; margin: 8px 0 0 16px; line-height: 1.6;">
-                    <li><strong>LLM-as-a-Judge Config:</strong> Prompts and model selection (e.g., GPT-4 for reasoning, Claude for tone).</li>
+                    <li><strong>LLM-as-a-Judge Config:</strong> Model selection (GPT-4o, Claude 3.5 Sonnet, Prometheus 2) and DSPy/LangSmith traces.</li>
                     <li><strong>Human-in-the-Loop Workflow:</strong> Routing logic for low-confidence outputs.</li>
                     <li><strong>CI/CD Gate:</strong> Github Action / API hook to block bad deployments.</li>
                 </ul>
@@ -413,37 +449,29 @@
     </div>
 </section>
 
-<section class="slide slide-dark" id="eval-evaluator">
+<section class="slide slide-dark" id="reliability">
     <div class="container reveal">
         <div class="label">07 &mdash; Technical Rigor</div>
-        <h2 class="js-split-text">Who judges the judges?</h2>
-        <p>Automated evaluation is useless if the evaluator is unreliable. We treat the judge as a software product that requires its own testing.</p>
+        <h2 class="js-split-text">Validating the Validator</h2>
+        <p>We treat the judge as a software product that requires its own testing. This is how we ensure reliability.</p>
         
-        <div style="margin-top: 32px; background: #1a1a1a; border: 1px solid #333; padding: 32px; border-radius: 8px;">
-            <div style="font-family: monospace; font-size: 13px; color: #ccc; line-height: 2;">
-                <strong style="color: #f59e0b; font-size: 15px;">Reliability Protocol</strong>
-                <br><br>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
-                    <div>
-                        <strong style="color: #fff;">1. CALIBRATION (Inter-Rater Reliability)</strong><br>
-                        <span style="color: #888;">Metric: Cohen's Kappa > 0.8</span><br>
-                        We measure how often the AI Judge agrees with your top human experts. If they disagree, we refine the rubric, not the model.
-                    </div>
-                    <div>
-                        <strong style="color: #fff;">2. DRIFT CHECKS</strong><br>
-                        <span style="color: #888;">Frequency: Weekly</span><br>
-                        We run the Judge against a static "Control Set" to ensure its standards haven't drifted due to model updates or prompt changes.
-                    </div>
-                    <div>
-                        <strong style="color: #fff;">3. RED TEAMING</strong><br>
-                        <span style="color: #888;">Frequency: Monthly</span><br>
-                        We intentionally try to fool the judge with subtle errors (e.g., correct tone, wrong fact) to ensure it catches nuance.
-                    </div>
-                    <div>
-                        <strong style="color: #fff;">4. VERSION CONTROL</strong><br>
-                        <span style="color: #888;">Artifact: Eval Config v1.0</span><br>
-                        Every rubric and judge prompt is versioned. You can trace a decision back to the exact criteria used at that time.
-                    </div>
+        <div style="margin-top: 32px; background: #1a1a1a; border: 1px solid #333; padding: 24px; border-radius: 8px;">
+             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                <div>
+                    <strong style="color: #f59e0b;">1. CALIBRATION (Kappa > 0.8)</strong><br>
+                    <span style="color: #888; font-size: 13px;">We measure agreement between AI Judge and human experts. If they disagree, we refine the rubric.</span>
+                </div>
+                <div>
+                    <strong style="color: #f59e0b;">2. DRIFT CHECKS (Weekly)</strong><br>
+                    <span style="color: #888; font-size: 13px;">Run judges against a static "Control Set" to ensure standards don't shift with model updates.</span>
+                </div>
+                <div>
+                    <strong style="color: #f59e0b;">3. RED TEAMING (Monthly)</strong><br>
+                    <span style="color: #888; font-size: 13px;">Adversarial testing to ensure the judge catches subtle errors and isn't fooled by fluency.</span>
+                </div>
+                <div>
+                    <strong style="color: #f59e0b;">4. VERSION CONTROL</strong><br>
+                    <span style="color: #888; font-size: 13px;">Every rubric and judge prompt is versioned (git). Decisions are traceable to specific criteria.</span>
                 </div>
             </div>
         </div>
@@ -458,20 +486,25 @@
         <div class="two-col" style="align-items: stretch;">
             <div class="box">
                 <div class="box-label">CASE STUDY: Healthcare Algorithm (2024)</div>
-                <div class="box-value">Reported 90% Error Rate</div>
-                <div class="box-small">A rules-based algorithm used by a major insurer to deny care was alleged to be wrong in 90% of appealed cases. While this predates modern generative AI, the lesson applies: <strong>all automated decision systems need rigorous evaluation before deployment.</strong> The result: class-action lawsuits and regulatory scrutiny.</div>
+                <div class="box-value">90% Overturn Rate (Alleged)</div>
+                <div class="box-small">A rules-based algorithm used by a major insurer to deny care was alleged to be overturned in ~90% of appealed cases. While this predates modern generative AI, the lesson applies: <strong>all automated decision systems need rigorous evaluation before deployment.</strong> The result: class-action lawsuits and regulatory scrutiny.</div>
             </div>
             <div class="box box-accent">
-                <div class="box-label">THE ECONOMIC REALITY (Illustrative Cost Model)</div>
-                <ul style="font-size: 13px; padding-left: 16px; margin: 8px 0; line-height: 1.6;">
-                    <li><strong>Infrastructure Cost (Scenario):</strong> $50K-200K annually (tooling + 1-2 FTE) vs. $500K-10M+ single critical incident (legal, PR, customer churn).</li>
-                    <li><strong>The Trust Premium:</strong> 46% of consumers will pay more for a brand they trust (Salsify 2024). Evaluation is a revenue driver.</li>
-                    <li><strong>Efficiency:</strong> Automated gates process 1000s of outputs/day vs. manual review limited to samples.</li>
-                </ul>
-                <p style="margin-top: 8px; font-size: 11px; opacity: 0.7; font-style: italic;">
-                    Ranges vary by company size, domain risk profile, and incident probability. These are illustrative estimates.
-                </p>
-                <div style="margin-top: 12px; font-size: 12px; opacity: 0.8; font-style: italic;">"What is your current defect rate? If you don't know, you are flying blind."</div>
+                <div class="box-label">SCENARIO: 50k Support Threads/Mo</div>
+                <div style="font-size: 13px; margin-top: 12px; line-height: 1.6;">
+                    <strong style="color: #fff;">Cost of Evaluation:</strong><br>
+                    ~ $2,500 / month<br>
+                    <span style="color: #888;">(50k * $0.05 per eval trace via GPT-4o-mini/3.5)</span>
+                    <br><br>
+                    <strong style="color: #fff;">Cost of Incident:</strong><br>
+                    ~ $150,000 / incident<br>
+                    <span style="color: #888;">(Legal fees, PR crisis, customer churn, remediation)</span>
+                    <br><br>
+                    <div style="background: rgba(0,0,0,0.2); padding: 8px; border-radius: 4px; margin-top: 8px;">
+                        <strong style="color: #10b981;">ROI Break-even:</strong><br>
+                        Preventing <strong>1</strong> minor hallucination per year pays for the entire infrastructure.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -570,60 +603,6 @@
                 <strong>Startups with limited resources:</strong> Start with Gates 1-2 only (safety + correctness). Add brand fit and taste layers as you scale.<br><br>
                 <strong>Moderate risk applications:</strong> Implement sampling + spot-check human review (10-20% of outputs) rather than full automated gates.<br><br>
                 <strong>Latency-sensitive but important:</strong> Run async evaluation on logged outputs for continuous monitoring without blocking responses.
-            </div>
-        </div>
-
-        <!-- NEW: Buyer/Budget Clarity Section -->
-        <div style="margin-top: 64px; padding-top: 48px; border-top: 1px solid #333;">
-            <h3 style="font-size: 24px; color: #f59e0b; margin-bottom: 24px;">Who Owns This?</h3>
-            <p style="font-size: 16px; color: #ccc; margin-bottom: 32px;">
-                Engineering, Legal, and Product have different budgets and incentives. Here's how to navigate the political reality:
-            </p>
-            
-            <table style="margin: 32px 0; font-size: 14px;">
-                <thead>
-                    <tr>
-                        <th>Stakeholder</th>
-                        <th>What They Care About</th>
-                        <th>Budget Source</th>
-                        <th>Your Pitch</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Engineering/CTO</strong></td>
-                        <td>Ship velocity, incident rate</td>
-                        <td>Platform/Infra</td>
-                        <td>"Reduce on-call incidents from AI failures"</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Risk/Legal/CISO</strong></td>
-                        <td>Liability exposure, compliance</td>
-                        <td>Risk budget</td>
-                        <td>"Auditable defense against AI liability"</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Product/Brand</strong></td>
-                        <td>Customer trust, NPS</td>
-                        <td>Product budget</td>
-                        <td>"Quality as differentiator, not cost center"</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="callout callout-dark" style="margin-top: 32px;">
-                <p style="margin: 0 0 16px 0; font-size: 16px; color: #f59e0b; font-weight: 600;">
-                    THE REALITY:
-                </p>
-                <p style="margin: 0; font-size: 14px; color: #ccc; line-height: 1.7;">
-                    In most organizations, this starts as an <strong>Engineering initiative</strong> (they feel the pain first), 
-                    gets funded by <strong>Risk</strong> (they have budget for liability mitigation), and gets championed by <strong>Product</strong> 
-                    (they see the customer impact).
-                </p>
-                <p style="margin: 16px 0 0 0; font-size: 14px; color: #ccc; line-height: 1.7;">
-                    <strong style="color: #f59e0b;">Entry Point:</strong> Start with the CISO or Chief Risk Officer if AI is customer-facing. 
-                    Start with Engineering if it's internal tooling. Product becomes your champion once you have early wins.
-                </p>
             </div>
         </div>
     </div>
@@ -826,10 +805,10 @@
 <section class="slide" id="arbitrage">
     <div class="container reveal">
         <div class="label">11 &mdash; The Arbitrage</div>
-        <h2 class="js-split-text">Where the market is still asleep</h2>
-        <p>Meanwhile, <strong>judgment</strong> is underpriced because it's hard to credential and hard to measure.</p>
+        <h2 class="js-split-text">The Last Mile Gap</h2>
+        <p>While providers (Anthropic, OpenAI) solve safety and tooling platforms (LangSmith, Arize) solve tracing, <strong>domain-specific judgment</strong> remains the enterprise gap.</p>
         <div class="diagram-container">
-            <div class="diagram-title">Skill Value Over Time: The Crossover</div>
+            <div class="diagram-title">Conceptual Model: Skill Value Shift*</div>
             <svg viewBox="0 0 700 280" style="width: 100%; max-width: 700px;">
                 <rect x="70" y="30" width="580" height="200" fill="url(#grid)" opacity="0.15"/>
                 <line x1="70" y1="230" x2="650" y2="230" stroke="#ddd" stroke-width="1"/><line x1="70" y1="30" x2="70" y2="230" stroke="#ddd" stroke-width="1"/>
@@ -842,6 +821,7 @@
                 <line id="crossover-line" x1="320" y1="30" x2="320" y2="125" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,4"/>
                 <text id="crossover-text" x="320" y="22" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600">CROSSOVER: NOW</text>
             </svg>
+            <p style="font-size: 11px; color: #666; margin-top: 8px; text-align: right; font-style: italic;">* Visual hypothesis illustrating the strategic shift from technical assembly to quality assurance.</p>
         </div>
         <div style="margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
             <div class="box-small" style="background: #f4f4f4; padding: 16px;">
@@ -864,44 +844,36 @@
 <section class="slide slide-dark" id="tradeoffs">
     <div class="container reveal">
         <div class="label">12 &mdash; Honest Limitations</div>
-        <h2 class="js-split-text">The Cost of Control</h2>
-        <p>Rigorous evaluation is not free. It is a strategic choice with real trade-offs.</p>
+        <h2 class="js-split-text">System Constraints</h2>
+        <p>Evaluation is a production system with real trade-offs.</p>
         
         <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
             <div class="box box-dark" style="border: 1px solid #333;">
-                <div class="box-label" style="color: #f59e0b;">Latency</div>
+                <div class="box-label" style="color: #f59e0b;">Latency (+500ms - 2s)</div>
                 <p style="font-size: 14px; color: #aaa; line-height: 1.6;">
-                    Better judges "think" longer. Adding a robust LLM-as-a-Judge layer can add <strong>500ms - 2s</strong> to your response time.
-                    <br><br>
-                    <span style="color: #fff;">Verdict:</span> Unfit for real-time voice; essential for async email/reports.
+                    Robust judges take time. <br>
+                    <span style="color: #fff;">Verdict:</span> Essential for async/email. Skip for real-time voice.
                 </p>
             </div>
             <div class="box box-dark" style="border: 1px solid #333;">
                 <div class="box-label" style="color: #f59e0b;">False Negatives</div>
                 <p style="font-size: 14px; color: #aaa; line-height: 1.6;">
-                    Strict gates kill serendipity. An overly conservative "Brand Gate" will reject <strong>creative outliers</strong> that don't fit the training distribution.
-                    <br><br>
-                    <span style="color: #fff;">Verdict:</span> You must tune "Temperature" for the Gate, not just the Generator.
+                    Strict gates can kill creative outliers. <br>
+                    <span style="color: #fff;">Verdict:</span> Tune "Judge Temperature" to match risk tolerance.
                 </p>
             </div>
             <div class="box box-dark" style="border: 1px solid #333;">
                 <div class="box-label" style="color: #f59e0b;">Maintenance</div>
                 <p style="font-size: 14px; color: #aaa; line-height: 1.6;">
-                    Your "Golden Set" rots faster than your code. As models change (weekly), your benchmarks become obsolete.
-                    <br><br>
-                    <span style="color: #fff;">Verdict:</span> You need a dedicated "Eval Ops" owner. It's not a set-and-forget script.
+                    Golden sets rot as models change.<br>
+                    <span style="color: #fff;">Verdict:</span> Requires an "Eval Ops" owner, not just a script.
                 </p>
             </div>
             <div class="box box-dark" style="border: 1px solid #333;">
-                <div class="box-label" style="color: #f59e0b;">The Commoditization Question</div>
+                <div class="box-label" style="color: #f59e0b;">Commoditization</div>
                 <p style="font-size: 14px; color: #aaa; line-height: 1.6;">
-                    Won't evaluation get cheaper too? <strong>Yes, for basic checks.</strong>
-                    <br><br>
-                    <strong style="color: #666;">Commoditizing Fast:</strong> Syntax validation, basic fact-checking, PII detection, generic safety filters
-                    <br><br>
-                    <strong style="color: #f59e0b;">Stays Expensive:</strong> Consequence-weighted judgment, domain-specific brand alignment, legal/compliance interpretation, stakeholder trade-off decisions
-                    <br><br>
-                    <span style="color: #fff;">Your moat:</span> Knowing which checks matter for YOUR domain and tuning trade-offs for YOUR risk profile.
+                    Generic checks (PII, Syntax) will become free/standard.<br>
+                    <span style="color: #fff;">Verdict:</span> The value is in bespoke Policy & Brand definitions.
                 </p>
             </div>
         </div>
@@ -910,8 +882,8 @@
 
 <section class="slide" id="predictions">
     <div class="container reveal">
-        <div class="label">13 &mdash; Directional Indicators</div>
-        <h2 class="js-split-text">Strategic Inflection Points</h2>
+        <div class="label">13 &mdash; Strategic Bets</div>
+        <h2 class="js-split-text">Market Theses</h2>
         <table style="margin-top: 32px;">
             <thead>
                 <tr>
@@ -922,7 +894,7 @@
             <tbody>
                 <tr class="stagger-item">
                     <td><strong>The Talent Filter</strong></td>
-                    <td class="highlight-cell">Enterprise job postings increasingly pivot from generic "AI Prompting" to specialized "Evaluation, Red-Teaming, and Quality Assurance."</td>
+                    <td class="highlight-cell">Ratio of "AI Engineer" roles requiring "Evaluation/Red-teaming" skills will flip from minority to majority by 2027.</td>
                 </tr>
                 <tr class="stagger-item">
                     <td><strong>The Compute Flip</strong></td>
@@ -1001,7 +973,7 @@
         <div class="label">14 &mdash; Skin in the Game</div>
         <h2 class="js-split-text">Why this is my life's work.</h2>
         <p style="font-size: 16px; color: #888; margin-bottom: 32px;">
-            I spent 16 years building quality systems for luxury brands where defects were unacceptable. After seeing enterprises struggle with AI quality issues, I invested 2024-2025 in bridging design systems thinking and ML evaluation—including formal study of agentic AI systems at MIT and consulting engagements across healthcare, finance, and B2B services. Studio W230 applies systematic quality methodologies to enterprise AI systems.
+            The principles of quality assurance are universal, whether applied to physical goods or probabilistic software. Studio W230 translates rigorous quality methodologies—proven in high-stakes manufacturing—into the domain of AI evaluation. This is not about aesthetics; it is about systemizing judgment to prevent defects at scale.
         </p>
         <div class="two-col" style="align-items: stretch;">
             <div class="box box-dark" style="border: 1px solid #333;">
@@ -1036,15 +1008,15 @@
                 </div>
             </div>
             <div class="box box-dark" style="border: 1px solid #333;">
-                <div class="box-label">The Background (2007–2024)</div>
+                <div class="box-label">Methodology Transfer</div>
                 <ul style="margin: 0; font-size: 14px; list-style: none; padding: 0; color: #888;">
                     <li style="border-bottom: 1px solid #333; padding: 12px 0 12px 28px;">
-                        <strong style="color: #f59e0b;">Luxury Brands (Fendi, Bentley, LVMH)</strong><br>
-                        R&D lead · Design excellence systems · Global market growth
+                        <strong style="color: #f59e0b;">From: Physical Product Quality</strong><br>
+                        16 years managing zero-defect constraints (Fendi, Bentley). Principles: Golden sets, adversarial stress-testing, human-in-the-loop validation.
                     </li>
                     <li style="padding: 12px 0 0 28px;">
-                        <strong style="color: #f59e0b;">Studio W230</strong><br>
-                        Computational design & AI strategy since 2016
+                        <strong style="color: #f59e0b;">To: AI Evaluation Systems</strong><br>
+                        Applying these constraints to probabilistic outputs. Bridging engineering rigor with domain-specific "taste" (policy & brand).
                     </li>
                 </ul>
             </div>
@@ -1100,6 +1072,9 @@
                 <p style="font-size: 16px; color: #888; margin-top: 24px; max-width: 500px; text-align: center;">
                     Working on AI evaluation challenges? I'd love to learn from your experience.
                 </p>
+                <div style="margin-top: 24px; font-size: 12px; color: #555; background: rgba(255,255,255,0.05); padding: 12px; border-radius: 4px; border: 1px solid #333; max-width: 600px;">
+                    <strong>Transparency Note:</strong> This manifesto reflects the methodology used by Studio W230 in consulting engagements. While the principles are open and transferable, the implementation examples reference services we provide.
+                </div>
                 <div style="width: 50px; border-top: 1px solid #333; margin: 16px 0;"></div>
                 <p style="font-size: 14px; color: #666;">
                     Simone Leonelli &mdash; Studio W230
