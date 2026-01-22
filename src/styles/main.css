@@ -1,8 +1,8 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { 
-    font-family: 'Inter', system-ui, sans-serif;
-    background: #fafafa;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #FAF9F6;
     color: #1a1a1a;
     line-height: 1.6;
     overflow-x: hidden;
@@ -42,11 +42,41 @@ body {
     flex-direction: column;
     justify-content: center;
     border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+
+.slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #e5e5e5 20%, #e5e5e5 80%, transparent 100%);
+    opacity: 0;
+    animation: slideRule 0.8s ease-out forwards;
+    animation-play-state: paused;
+}
+
+.slide.animate-rule::after {
+    animation-play-state: running;
+}
+
+@keyframes slideRule {
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
 }
 
 .slide-dark {
-    background: #0a0a0a;
-    background-image: radial-gradient(circle at 50% -20%, #1a1a1a 0%, #0a0a0a 80%);
+    background: #000;
+    background-image: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
     color: #fafafa;
 }
 
@@ -83,6 +113,7 @@ body {
 }
 
 h1 {
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: clamp(32px, 6.5vw, 64px);
     font-weight: 300;
     line-height: 1.1;
@@ -95,6 +126,7 @@ h1 strong {
 }
 
 h2 {
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: 40px;
     font-weight: 400;
     line-height: 1.2;
@@ -146,6 +178,17 @@ p strong { color: #1a1a1a; }
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     border: 1px solid rgba(0,0,0,0.05);
     will-change: transform, box-shadow; /* Optimized for animation */
+}
+
+/* Secondary accent for safety/compliance elements */
+.box[style*="3b82f6"], 
+.callout[style*="3b82f6"],
+[style*="color: #3b82f6"] {
+    color: #64748b !important;
+}
+
+.box[style*="border-left: 2px solid #3b82f6"] {
+    border-left-color: #64748b !important;
 }
 
 .box:hover {
@@ -238,7 +281,7 @@ td {
     border-bottom: 1px solid #eee;
 }
 
-tr:nth-child(even) { background: #fafafa; }
+tr:nth-child(even) { background: #FAF9F6; }
 
 tr.highlight-row {
     background: #fffbeb;
@@ -277,6 +320,10 @@ tr.highlight-row {
 }
 
 .slide-dark .box:hover strong {
+    color: #fff !important;
+}
+
+.slide-dark .box:hover li {
     color: #fff !important;
 }
 
@@ -480,6 +527,11 @@ svg text {
     font-family: 'Inter', system-ui, sans-serif;
 }
 
+/* Monospace for code blocks */
+pre, code, .gate-flow, .callout[style*="monospace"] {
+    font-family: 'JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', monospace !important;
+}
+
 .diagram-container {
     background: #fff;
     border: 1px solid #e5e5e5;
@@ -549,76 +601,48 @@ svg text {
 
 .nav {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    top: 32px;
+    right: 32px;
     z-index: 100;
-}
-
-.nav a {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ddd;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy spring easing */
-}
-
-.nav a:hover {
-    background: #f59e0b;
-    transform: scale(1.5);
-}
-
-
-/* Nav dot tooltips */
-.nav a {
-    position: relative;
-}
-.nav a::after {
-    content: attr(data-label);
-    position: absolute;
-    right: 18px;
-    top: 50%;
-    transform: translateY(-50%) translateX(0);
-    background: rgba(10, 10, 10, 0.92);
-    color: #fafafa;
-    font-size: 11px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.2px;
-    padding: 6px 8px;
-    border-radius: 4px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.15s ease, transform 0.15s ease;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.22);
-    border: 1px solid rgba(255,255,255,0.08);
+    color: #888;
+    letter-spacing: 0.05em;
+    display: none; /* Hidden by default, shown by JS */
 }
-.nav a::before {
-    content: "";
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 6px solid rgba(10, 10, 10, 0.92);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.15s ease;
+
+.nav-counter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
-.nav a:hover::after {
-    opacity: 1;
-    transform: translateY(-50%) translateX(-4px);
+
+.nav-counter .current {
+    color: #f59e0b;
+    font-size: 16px;
+    font-weight: 600;
 }
-.nav a:hover::before {
-    opacity: 1;
+
+.nav-counter .divider {
+    color: #444;
+}
+
+.nav-counter .total {
+    color: #666;
+}
+
+/* Keep old nav links hidden but functional for anchor navigation */
+.nav a {
+    display: none;
 }
 
 /* Removed .final-claim styles - content now sits on dark slide background */
+
+/* Laggard fade effect - applied after animation completes */
+.laggard-fade {
+    opacity: 0.6 !important;
+}
 
 @media (max-width: 768px) {
     .slide { padding: 40px 24px; }

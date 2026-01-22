@@ -42,20 +42,15 @@ const splitText = (element, type = 'word') => {
     }
 };
 
-// Apply split text to elements with .js-split-text
+// Simplified: Remove word-split reveals for most text
+// Only keep for specific hero elements if needed
 document.querySelectorAll('.js-split-text').forEach(el => {
-    splitText(el, 'word');
-    
-    gsap.from(el.querySelectorAll('.word-inner'), {
-        y: '110%',
+    // Simple fade-in instead of complex word animation
+    gsap.from(el, {
         opacity: 0,
-        rotationZ: 3,
-        duration: 1.5,
-        ease: "power4.out",
-        stagger: {
-            amount: 0.5,
-            from: "start"
-        },
+        y: 20,
+        duration: 1,
+        ease: "power2.out",
         scrollTrigger: {
             trigger: el,
             start: "top 90%",
@@ -265,24 +260,48 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// New navigation counter system
+const initNavCounter = () => {
+    const nav = document.querySelector('.nav');
+    const slides = document.querySelectorAll('.slide');
+    
+    // Create counter element
+    const counter = document.createElement('div');
+    counter.className = 'nav-counter';
+    counter.innerHTML = `
+        <span class="current">01</span>
+        <span class="divider">/</span>
+        <span class="total">${slides.length.toString().padStart(2, '0')}</span>
+    `;
+    
+    // Clear existing nav content and add counter
+    nav.innerHTML = '';
+    nav.appendChild(counter);
+    nav.style.display = 'block';
+    
+    return counter;
+};
+
 const updateNav = () => {
     const slides = document.querySelectorAll('.slide');
-    const navDots = document.querySelectorAll('.nav a');
+    const counter = document.querySelector('.nav-counter .current');
     const scrollY = window.scrollY;
     
     slides.forEach((slide, i) => {
         const isActive = slide.offsetTop <= scrollY + window.innerHeight / 2 &&
                        slide.offsetTop + slide.offsetHeight > scrollY + window.innerHeight / 2;
-        if (navDots[i]) {
-            navDots[i].style.background = isActive ? '#f59e0b' : '#ddd';
-            if(isActive) {
-                gsap.to(navDots[i], { scale: 1.3, duration: 0.3 });
-            } else {
-                gsap.to(navDots[i], { scale: 1, duration: 0.3 });
+        if (isActive && counter) {
+            counter.textContent = (i + 1).toString().padStart(2, '0');
+            
+            // Trigger section transition animation
+            if (!slide.classList.contains('animate-rule')) {
+                slide.classList.add('animate-rule');
             }
         }
     });
 };
 
+// Initialize
+initNavCounter();
 window.addEventListener('scroll', updateNav);
 updateNav();
