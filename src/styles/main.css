@@ -685,6 +685,69 @@ pre, code, .gate-flow, .callout[style*="monospace"] {
     color: #000;
 }
 
+/* Validator Section - Technical Rigor */
+.validator-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.validator-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.validator-card:hover {
+    border-color: #f59e0b;
+}
+
+.validator-number {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.validator-content {
+    flex: 1;
+}
+
+.validator-title {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.validator-metric {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.validator-desc {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.5;
+    margin: 0;
+}
+
 @media (max-width: 768px) {
     .slide { padding: 40px 24px; }
     h1 { font-size: 32px; }
@@ -695,4 +758,7 @@ pre, code, .gate-flow, .callout[style*="monospace"] {
     .deliverables-grid > .box { grid-column: span 1 !important; }
     .code-examples-grid { grid-template-columns: 1fr !important; }
     .code-block { font-size: 12px; padding: 12px; }
+    .validator-grid { grid-template-columns: 1fr; }
+    .validator-card { padding: 20px; }
+    .validator-number { font-size: 24px; }
 }
