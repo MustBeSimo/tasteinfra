@@ -395,14 +395,13 @@
         <h2 class="js-split-text">What you actually get.</h2>
         <p>This is not just a philosophy. It is a set of tangible artifacts that your engineering, legal, and product teams will own.</p>
         
-        <div class="grid-col-2" style="margin-top: 32px; gap: 24px; display: grid; grid-template-columns: 1fr 1fr;">
+        <div class="deliverables-grid" style="margin-top: 32px; gap: 24px; display: grid; grid-template-columns: 1fr 1fr;">
             <div class="box" style="border: 1px solid #333; grid-column: span 2;">
                 <div class="box-label" style="color: #f59e0b;">1. The Evaluation Spec (Artifacts)</div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 12px;">
+                <div class="code-examples-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px;">
                     <div>
-                        <strong style="font-size: 13px; color: #fff;">Failure Taxonomy (Example)</strong>
-                        <pre style="font-family: monospace; font-size: 11px; color: #aaa; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 4px; overflow-x: auto;">
-{
+                        <strong style="font-size: 14px; color: #000; display: block; margin-bottom: 8px;">Failure Taxonomy (Example)</strong>
+                        <pre class="code-block">{
   "CRITICAL": {
     "HALLUCINATION_FACT": "Claims contradiction with retrieval ctx",
     "UNSAFE_PII": "Contains email/phone/SSN",
@@ -415,14 +414,13 @@
 }</pre>
                     </div>
                     <div>
-                        <strong style="font-size: 13px; color: #fff;">Rubric (DSPy Signature)</strong>
-                        <pre style="font-family: monospace; font-size: 11px; color: #aaa; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 4px; overflow-x: auto;">
-class FactJudge(dspy.Signature):
+                        <strong style="font-size: 14px; color: #000; display: block; margin-bottom: 8px;">Rubric (DSPy Signature)</strong>
+                        <pre class="code-block">class FactJudge(dspy.Signature):
     """Judge if response is supported by context."""
-    
+
     context = dspy.InputField()
     response = dspy.InputField()
-    
+
     # Output
     is_supported = dspy.OutputField(desc="True/False")
     citation_check = dspy.OutputField(desc="List of missing citations")</pre>
@@ -431,7 +429,7 @@ class FactJudge(dspy.Signature):
             </div>
             <div class="box" style="border: 1px solid #333;">
                 <div class="box-label" style="color: #f59e0b;">3. The Judge Stack</div>
-                <ul style="font-size: 13px; color: #ccc; margin: 8px 0 0 16px; line-height: 1.6;">
+                <ul class="deliverables-list">
                     <li><strong>LLM-as-a-Judge Config:</strong> Model selection (GPT-4o, Claude 3.5 Sonnet, Prometheus 2) and DSPy/LangSmith traces.</li>
                     <li><strong>Human-in-the-Loop Workflow:</strong> Routing logic for low-confidence outputs.</li>
                     <li><strong>CI/CD Gate:</strong> Github Action / API hook to block bad deployments.</li>
@@ -439,7 +437,7 @@ class FactJudge(dspy.Signature):
             </div>
             <div class="box" style="border: 1px solid #333;">
                 <div class="box-label" style="color: #f59e0b;">4. The Dashboard</div>
-                <ul style="font-size: 13px; color: #ccc; margin: 8px 0 0 16px; line-height: 1.6;">
+                <ul class="deliverables-list">
                     <li><strong>Live Drift Monitor:</strong> Real-time chart of pass/fail rates.</li>
                     <li><strong>Incident Log:</strong> Full audit trail of rejected outputs for Legal/Compliance.</li>
                     <li><strong>Cost Tracker:</strong> Eval spend vs. Generation spend.</li>
