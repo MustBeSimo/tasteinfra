@@ -649,8 +649,8 @@ pre, code, .gate-flow, .callout[style*="monospace"] {
     font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
     font-size: 13px;
     line-height: 1.5;
-    color: #ccc;
-    background: rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
+    background: #1a1a1a;
     padding: 16px;
     border-radius: 6px;
     overflow-x: auto;
@@ -662,7 +662,7 @@ pre, code, .gate-flow, .callout[style*="monospace"] {
 /* Deliverables Section - Lists */
 .deliverables-list {
     font-size: 14px;
-    color: #ccc;
+    color: #555;
     margin: 12px 0 0 20px;
     line-height: 1.7;
     list-style-type: none;
@@ -682,7 +682,7 @@ pre, code, .gate-flow, .callout[style*="monospace"] {
 }
 
 .deliverables-list li strong {
-    color: #fff;
+    color: #000;
 }
 
 @media (max-width: 768px) {
